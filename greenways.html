@@ -16,8 +16,8 @@
             font-family: Arial, Helvetica, sans-serif;
             margin-left: 10rem;
         }
-        #mapid { height: 800px;
-                width: 80%;
+        #mapid { height: 1000px;
+                width: 1000px;
                 margin: 5rem 0 0 10rem; }
 
     </style>
@@ -39,9 +39,9 @@
 
       
 
-L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	subdomains: 'abcd'
+      L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
 
 </script>
