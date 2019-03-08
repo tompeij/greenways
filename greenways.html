@@ -35,14 +35,28 @@
       crossorigin=""></script>
 
       <script>
-      var mymap = L.map('mapid').setView([50.01764, -125.24459], 15);
+
+var planes = [
+        ["Discovery Marina",50.0324449,-125.2441975],
+        ["Sequoia Park",50.0159652,-125.237579],
+        ["Beaver Lodge Park",49.9859959,-125.2619886]
+		
+        ];
+        
+      var mymap = L.map('mapid').setView([49.9859959,-125.2619886], 15);
 
       
 
       L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-	maxZoom: 19,
+	maxZoom: 13,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
+
+for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(mymap);
+		}
 
 </script>
 
