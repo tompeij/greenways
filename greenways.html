@@ -9,17 +9,23 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
-  
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
     <style>
         h1 {
             font-family: Arial, Helvetica, sans-serif;
             margin-left: 10rem;
         }
-        #mapid { height: 1000px;
-                width: 1000px;
-                margin: 5rem 0 0 10rem; }
 
+        #mapid {
+            height: 1000px;
+            width: 1000px;
+            margin: 5rem 0 0 10rem;
+        }
     </style>
 
 </head>
@@ -30,35 +36,69 @@
 
     <div id="mapid"></div>
 
-      <!-- Make sure you put this AFTER Leaflet's CSS -->
-      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-      crossorigin=""></script>
 
-      <script>
 
-var planes = [
-        ["Discovery Marina",50.0324449,-125.2441975],
-        ["Sequoia Park",50.0159652,-125.237579],
-        ["Beaver Lodge Park",49.9859959,-125.2619886]
-		
-        ];
-        
-      var mymap = L.map('mapid').setView([49.9859959,-125.2619886], 15);
+    <script>
+        var map = L.map('mapid').setView([49.9859959, -125.2619886], 13);
 
-      
+        L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
 
-      L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-	maxZoom: 13,
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-for (var i = 0; i < planes.length; i++) {
-			marker = new L.marker([planes[i][1],planes[i][2]])
-				.bindPopup(planes[i][0])
-				.addTo(mymap);
-		}
+        var sideBikeIcon = L.icon({
+            iconUrl: 'bike_marker.svg',
+            iconSize: [60, 135], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        var boatIcon = L.icon({
+            iconUrl: 'boat_marker.svg',
+            iconSize: [60, 135], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        var frontBikeIcon = L.icon({
+            iconUrl: 'front_bike_marker.svg',
+            iconSize: [60, 135], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
 
-</script>
+        L.marker([49.98, -125.26], {
+            icon: sideBikeIcon
+        }).addTo(map);
+
+        L.marker([50.0324449, -125.2441975], {
+            icon: boatIcon
+        }).addTo(map);
+
+        L.marker([50.0159652, -125.237579], {
+            icon: frontBikeIcon
+        }).addTo(map);
+
+
+
+        // var planes = [
+        //     ["Discovery Marina", 50.0324449, -125.2441975],
+        //     ["Sequoia Park", 50.0159652, -125.237579],
+        //     ["Beaver Lodge Park", 49.9859959, -125.2619886]
+
+        // ];
+
+        // for (var i = 0; i < planes.length; i++) {
+        //     marker = new L.marker([planes[i][1], planes[i][2]])
+        //         .bindPopup(planes[i][0])
+        //         .addTo(map);
+        // }
+
+        //         L.Routing.control({
+        //   waypoints: [
+        //     L.latLng(50.0324449, -125.2441975),
+        //     L.latLng(50.0159652, -125.237579)
+        //   ]
+        // }).addTo(mymap);
+    </script>
 
 
 </body>
