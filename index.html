@@ -5,203 +5,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
     <title>Greenways Loop</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__logo-box">
-            <img src="images/greenways_logo.svg" alt="Greenways Frog Logo" class="header__logo">
-        </div>
-        <div class="header__text-box">
-            <h1 class="heading-primary">
-                <span class="heading-primary--main">Greenways Loop</span>
-                <span class="heading-primary--sub">Campbell River</span>
-            </h1>
-        </div>
-        <div class="weather-box"></div>
-        <div class="hero-box">
-            <h2 class="heading-secondary">Be a hero</h2>
-            <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
-            <div class="hero-box__fact">
-                <h4 class="heading-fact">burn</h4>
-                <p class="heading-fact__stat">24k</p>
-                <p class="heading-fact__unit">calories</p>
+    <div class="container">
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="images/greenways_logo.svg" alt="Greenways Frog Logo" class="header__logo">
             </div>
-            <div class="hero-box__fact">
-                <h4 class="heading-fact">extend</h4>
-                <p class="heading-fact__stat">60yrs</p>
-                <p class="heading-fact__unit">of your life</p>
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">Greenways Loop</span>
+                    <span class="heading-primary--sub">Campbell River</span>
+                </h1>
             </div>
-            <div class="hero-box__fact">
-                <h4 class="hero-box__heading-fact">reduce</h4>
-                <p class="hero-box__heading-fact--stat">160kg</p>
-                <p class="hero-box__heading-fact--unit">carbon</p>
-            </div>
-        </div>
-    </header>
-    <section class="map-box">
-        <div id="mapid">Map Will Go Here</div>
-        <button class="btn-share">Share</button>
-    </section>
-    <section class="section-stats">
-        <h2 class="section-stats-heading">
-            <span class="section-stats-heading__primary">Riding a bike on the Greenways Loop is Awesome!</span>
-            <span class="section-stats-heading__secondary">Here are some amazing facts that happen every time you enjoy
-                the loop! (Or ride your bike anywhere for that matter…)</span>
-        </h2>
-        <div class="card-row">
-            <div class="card">
-                <div class="card-front">
-                    <h3 class="card-title">Sustainability</h3>
-                    <img src="images/earth.svg" alt="Picture of Globe">
+            <div class="weather-box"></div>
+            <div class="hero-box">
+                <h2 class="heading-secondary">Be a hero</h2>
+                <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
+                <div class="hero-box__fact">
+                    <h4 class="heading-fact">burn</h4>
+                    <p class="heading-fact__stat">24k</p>
+                    <p class="heading-fact__unit">calories</p>
                 </div>
-                <div class="card-back">
-                    <h3 class="card-title">Sustainability</h3>
-                    <div class="card__details">
-                        <ul>
-                            <li><span class="card__details--bold">Reduce household emissions</span> - Riding your bike
-                                to work rather than driving can cut down on your household emissions by at least 6%.
-                            </li>
-                            <li><span class="card__details--bold">Reduce traffic</span> - Cars produce .97 pounds of
-                                pollution per mile annually; bikes produce none. Bikes are also up to 50% faster than
-                                cars during rush hour.</li>
-                            <li><span class="card__details--bold">Takes less to make a bike</span> - Bikes take far
-                                fewer natural resources to make than cars, the production of which generates 1.2 billion
-                                yards of pollution each year.</li>
-                            <li><span class="card__details--bold">Saves entire forests</span> - Far less rubber is
-                                involved in making bikes and their tires, which helps prevent the clearing of forests
-                                for rubber plantations.</li>
-                            <li><span class="card__details--bold">Combats noise pollution</span> - Not only does riding
-                                a bike help combat noise pollution, which affects wild animals, but results in less road
-                                kill, too.</li>
-                        </ul>
-                    </div>
+                <div class="hero-box__fact">
+                    <h4 class="heading-fact">extend</h4>
+                    <p class="heading-fact__stat">60yrs</p>
+                    <p class="heading-fact__unit">of your life</p>
+                </div>
+                <div class="hero-box__fact">
+                    <h4 class="hero-box__heading-fact">reduce</h4>
+                    <p class="hero-box__heading-fact--stat">160kg</p>
+                    <p class="hero-box__heading-fact--unit">carbon</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-front">
-                    <h3 class="card-title">Health and Wellness</h3>
-                    <img src="images/heart.svg" alt="Picture of Heart with White Cross">
-                </div>
-                <div class="card-back">
-                    <h3 class="card-title">Health and Wellness</h3>
-                    <div class="card__details">
-                        <ul>
-                            <li><span class="card__details--bold">Keep your body in check</span> - People who bike to
-                                work have better blood pressure, insulin levels, and triglyceride levels.
-                            </li>
-                            <li><span class="card__details--bold">Burn, baby, burn</span> - Depending on your weight,
-                                you can burn between 215-500 calories during a 30-minutes bike ride.* (*Based on a 10
-                                mph pace (average commuter pace). The actual calories you burn while riding depend on
-                                your weight, fitness level, speed, number of hills, etc.</li>
-                            <li><span class="card__details--bold">Feel more alert, sleep better</span> - People who bike
-                                to work have reduced tiredness and less difficulty sleeping.
-                            </li>
-                            <li><span class="card__details--bold">Reduce the risks</span> - Just 3 hours of biking per
-                                week can reduce your risk of heart disease by 50%.
-                            </li>
-                            <li><span class="card__details--bold">Believe in the benefits</span> - People who bike to
-                                work believe their health has improved since they started commuting by bike.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-front">
-                    <h3 class="card-title">Economics</h3>
-                    <img src="images/piggy.svg" alt="Picture of Piggy Bank">
-                </div>
-                <div class="card-back">
-                    <h3 class="card-title">Economics</h3>
-                    <div class="card__details">
-                        <ul>
-                            <li><span class="card__details--bold">Lower health care costs</span> - For obese workers,
-                                being physically active* 1-2 days a week lowered healthcare costs by $400-$500 per year.
-                                (*Physical activity was defined as at least 20 minutes of exercise that increases heart
-                                rate and breathing.)
-
-                            </li>
-                            <li><span class="card__details--bold">Reduce vehicle operating expenses</span> - The average
-                                annual operating expense of a bicycle is just $308, versus more than $8,000 for a car.
-                            </li>
-                            <li><span class="card__details--bold">Helps support local businesses</span> - When you ride
-                                a bike, you’re more likely to keep your trips shorter and your shopping closer to home,
-                                which is great for local business.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="about-contact">
-        <div class="about-contact-heading-box">
-            <img src="images/greenways_logo.svg" alt="Greenways Land Trust Frog Logo" class="about__logo">
-            <h2 class="about-heading">
-                <span class="about-heading__primary">Greeways Land Trust</span>
-                <span class="about-heading__secondary">Enhancing Natural Areas for People and Wildlife</span>
+        </header>
+        <section class="map-box">
+            <div id="mapid"></div>
+            <button class="btn-share">Share</button>
+        </section>
+        <section class="section-stats">
+            <h2 class="section-stats-heading">
+                <span class="section-stats-heading__primary">Riding a bike on the Greenways Loop is Awesome!</span>
+                <span class="section-stats-heading__secondary">Here are some amazing facts that happen every time you
+                    enjoy
+                    the loop! (Or ride your bike anywhere for that matter…)</span>
             </h2>
-        </div>
-        <div class="about-contact-row">
-            <div class="about-text-box">
-                <h3 class="about-text-box-heading">We Engage, we link, we steward.</h3>
-                <p class="about-text-box-details">Greenways Land Trust is a registered charity and conservation
-                    organization that works to enhance the community through the creation and management of greenways
-                    networks, based on principles of stream and land stewardship. We act as an umbrella organization
-                    that works together with local stewardship groups, community organizations and local governments. We
-                    support the activities of volunteer streamkeepers and stewards.</p>
+            <div class="card-row">
+                <div class="card">
+                    <div class="card-front">
+                        <h3 class="card-title">Sustainability</h3>
+                        <img src="images/earth.svg" alt="Picture of Globe">
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">Sustainability</h3>
+                        <div class="card__details">
+                            <ul>
+                                <li><span class="card__details--bold">Reduce household emissions</span> - Riding your
+                                    bike
+                                    to work rather than driving can cut down on your household emissions by at least 6%.
+                                </li>
+                                <li><span class="card__details--bold">Reduce traffic</span> - Cars produce .97 pounds of
+                                    pollution per mile annually; bikes produce none. Bikes are also up to 50% faster
+                                    than
+                                    cars during rush hour.</li>
+                                <li><span class="card__details--bold">Takes less to make a bike</span> - Bikes take far
+                                    fewer natural resources to make than cars, the production of which generates 1.2
+                                    billion
+                                    yards of pollution each year.</li>
+                                <li><span class="card__details--bold">Saves entire forests</span> - Far less rubber is
+                                    involved in making bikes and their tires, which helps prevent the clearing of
+                                    forests
+                                    for rubber plantations.</li>
+                                <li><span class="card__details--bold">Combats noise pollution</span> - Not only does
+                                    riding
+                                    a bike help combat noise pollution, which affects wild animals, but results in less
+                                    road
+                                    kill, too.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-front">
+                        <h3 class="card-title">Health and Wellness</h3>
+                        <img src="images/heart.svg" alt="Picture of Heart with White Cross">
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">Health and Wellness</h3>
+                        <div class="card__details">
+                            <ul>
+                                <li><span class="card__details--bold">Keep your body in check</span> - People who bike
+                                    to
+                                    work have better blood pressure, insulin levels, and triglyceride levels.
+                                </li>
+                                <li><span class="card__details--bold">Burn, baby, burn</span> - Depending on your
+                                    weight,
+                                    you can burn between 215-500 calories during a 30-minutes bike ride.* (*Based on a
+                                    10
+                                    mph pace (average commuter pace). The actual calories you burn while riding depend
+                                    on
+                                    your weight, fitness level, speed, number of hills, etc.</li>
+                                <li><span class="card__details--bold">Feel more alert, sleep better</span> - People who
+                                    bike
+                                    to work have reduced tiredness and less difficulty sleeping.
+                                </li>
+                                <li><span class="card__details--bold">Reduce the risks</span> - Just 3 hours of biking
+                                    per
+                                    week can reduce your risk of heart disease by 50%.
+                                </li>
+                                <li><span class="card__details--bold">Believe in the benefits</span> - People who bike
+                                    to
+                                    work believe their health has improved since they started commuting by bike.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-front">
+                        <h3 class="card-title">Economics</h3>
+                        <img src="images/piggy.svg" alt="Picture of Piggy Bank">
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">Economics</h3>
+                        <div class="card__details">
+                            <ul>
+                                <li><span class="card__details--bold">Lower health care costs</span> - For obese
+                                    workers,
+                                    being physically active* 1-2 days a week lowered healthcare costs by $400-$500 per
+                                    year.
+                                    (*Physical activity was defined as at least 20 minutes of exercise that increases
+                                    heart
+                                    rate and breathing.)
+
+                                </li>
+                                <li><span class="card__details--bold">Reduce vehicle operating expenses</span> - The
+                                    average
+                                    annual operating expense of a bicycle is just $308, versus more than $8,000 for a
+                                    car.
+                                </li>
+                                <li><span class="card__details--bold">Helps support local businesses</span> - When you
+                                    ride
+                                    a bike, you’re more likely to keep your trips shorter and your shopping closer to
+                                    home,
+                                    which is great for local business.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="contact-text-box">
-            <div class="contact-form">
-                <form action="#" class="form">
-                    <div class="form__group">
-                        <input type="text" class="form__input" placeholder="Name" id="name" required>
-                        <label for="name" class="form__label">Name</label>
-                    </div>
-                    <div class="form__group">
-                        <input type="email" class="form__input" placeholder="Email" id="email" required>
-                        <label for="Email" class="form__label">Email</label>
-                    </div>
-                    <div class="form__group">
-                        <input type="text" class="form__input" placeholder="Message" id="message" required>
-                        <label for="message" class="form__label">Message</label>
-                    </div>
-                    <div class="form__group">
-                        <button class="btn-submit">Submit</button>
-                    </div>
-                </form>
+        </section>
+        <section class="about-contact">
+            <div class="about-contact-heading-box">
+                <img src="images/greenways_logo.svg" alt="Greenways Land Trust Frog Logo" class="about__logo">
+                <h2 class="about-heading">
+                    <span class="about-heading__primary">Greeways Land Trust</span>
+                    <span class="about-heading__secondary">Enhancing Natural Areas for People and Wildlife</span>
+                </h2>
             </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="copyright">
-            <p class="copyright__text">Copyright 2019 Greenways Land Trust</p>
-        </div>
-        <div class="social-media">
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
-        </div>
-        <div class="newsletter">
-            <form action="#">
+            <div class="about-contact-row">
+                <div class="about-text-box">
+                    <h3 class="about-text-box-heading">We Engage, we link, we steward.</h3>
+                    <p class="about-text-box-details">Greenways Land Trust is a registered charity and conservation
+                        organization that works to enhance the community through the creation and management of
+                        greenways
+                        networks, based on principles of stream and land stewardship. We act as an umbrella organization
+                        that works together with local stewardship groups, community organizations and local
+                        governments. We
+                        support the activities of volunteer streamkeepers and stewards.</p>
+                </div>
+            </div>
+            <div class="contact-text-box">
+                <div class="contact-form">
+                    <form action="#" class="form">
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Name" id="name" required>
+                            <label for="name" class="form__label">Name</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" class="form__input" placeholder="Email" id="email" required>
+                            <label for="Email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Message" id="message" required>
+                            <label for="message" class="form__label">Message</label>
+                        </div>
+                        <div class="form__group">
+                            <button class="btn-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="copyright">
+                <p class="copyright__text">Copyright 2019 Greenways Land Trust</p>
+            </div>
+            <div class="social-media">
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <form action="#">
                     <input type="email" class="newsletter-input" placeholder="Email" id="email" required>
                     <label for="Email" class="form__label">Email</label>
-                <button>OK</button>
-            </form>
-        </div>
-        <div class="address">
-            <ul>
-                <li>P.O. Box 25063 TYEE</li>
-                <li>Campbell River, BC  V9W 0B7</li>
-                <li>Canada</li>
-                <li>250-287-3785</li>
-            </ul>
-        </div>
-    </footer>
-
+                    <button>OK</button>
+                </form>
+            </div>
+            <div class="address">
+                <ul>
+                    <li>P.O. Box 25063 TYEE</li>
+                    <li>Campbell River, BC V9W 0B7</li>
+                    <li>Canada</li>
+                    <li>250-287-3785</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="javascript/greenways.js"></script>
 </body>
 
 </html>
