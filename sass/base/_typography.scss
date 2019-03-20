@@ -1,0 +1,71 @@
+.heading-primary {
+
+    margin-left: 2rem;
+
+    &--main {
+        display: block;
+        font-weight: 200;
+        font-size: 7rem;
+        line-height: 1;
+        width: 34rem;
+    }
+
+    &--sub {
+        display: block;
+        font-weight: 300;
+        font-size: 3.6rem;
+        line-height: 1;
+        padding-top: 1rem;
+        width: 34rem;
+    }
+}
+
+.hero-box {
+    font-weight: 300;
+    .heading-secondary {
+        color: $text-color-secondary;
+        font-size: 4.8rem;
+        font-weight: 300;
+    }
+
+    &-text {
+        font-size: 1.5rem;
+    }
+    &__heading-fact {
+        font-size: 2.1rem;
+        font-weight: 300;
+        &--stat {
+            color: $text-color-secondary;
+            font-size: 2.1rem;
+        }
+        &--unit {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.section-stats-heading {
+    color: $text-color-secondary;
+    display: block;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    &__primary {
+        font-size: 6.3rem;
+    }
+    &__secondary {
+        font-size: 2.4rem;
+    }
+}
+
+.card {
+    text-align: center;
+    &-title-text {
+        border: 2px solid $text-color-secondary;
+        border-radius: 10px;
+        color: $text-color-secondary;
+        font-size: 3.6rem;
+        font-weight: 300;
+        max-width: 30rem;
+    }
+}

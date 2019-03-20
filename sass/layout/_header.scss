@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    max-width: 80vw;
+}
+.hero-box {
+    width: 27rem;
+    &-fact {
+        display: flex;
+        justify-content: space-between;
+    }
+}

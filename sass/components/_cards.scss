@@ -1,0 +1,15 @@
+.card-row {
+    padding: 6.4rem 14rem 9.1rem 14rem; 
+}
+
+.card {
+    background-color: $color-blue-extra_light;
+    height: 70rem;
+    width: 50rem;
+    &-title-box {
+        background-color: $color-blue-medium;
+    }
+    &-back {
+        display: none;
+    }
+}

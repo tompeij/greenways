@@ -1,0 +1,12 @@
+.section-stats {
+    background-color: $background-color-blue-dark;
+    margin-top: 6.5rem;
+    &-text-box {
+        background-color: $background-color-off_white;
+    }
+}
+.card-row {
+    display: flex;
+    justify-content: space-around;
+}
+

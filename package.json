@@ -1,0 +1,25 @@
+{
+  "name": "greenways",
+  "version": "1.0.0",
+  "description": "greenways loop trail interactive map site",
+  "main": "index.js",
+  "dependencies": {
+    "leaflet": "^1.4.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tompeij/greenways.git"
+  },
+  "author": "Jason Thompson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tompeij/greenways/issues"
+  },
+  "homepage": "https://github.com/tompeij/greenways#readme"
+}
