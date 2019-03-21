@@ -3,8 +3,9 @@
 }
 
 .card {
-    height: 70rem;
-    width: 50rem;
+    width: 25%;
+    max-width: 50rem;
+    min-width: 46rem;
 
     &__side {
         background-color: $color-blue-extra_light;

@@ -1,4 +1,5 @@
 .card {
+  height: 70rem;
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative; }
@@ -110,8 +111,9 @@ body {
   padding: 6.4rem 14rem 9.1rem 14rem; }
 
 .card {
-  height: 70rem;
-  width: 50rem; }
+  width: 25%;
+  max-width: 50rem;
+  min-width: 46rem; }
   .card__side {
     background-color: #E2E3E5;
     box-shadow: 0 20px 15px rgba(0, 0, 0, 0.16); }
