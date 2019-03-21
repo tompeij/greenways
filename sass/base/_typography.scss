@@ -4,7 +4,7 @@
 
     &--main {
         display: block;
-        font-weight: 200;
+        font-weight: 300;
         font-size: 7rem;
         line-height: 1;
         width: 34rem;
@@ -60,6 +60,7 @@
 
 .card {
     text-align: center;
+
     &-title-text {
         border: 2px solid $text-color-secondary;
         border-radius: 10px;
@@ -67,7 +68,28 @@
         font-size: 3.6rem;
         font-weight: 300;
     }
+
+    &__details {
+       
+        & ul {
+            list-style-type: none;
+        }
+        
+        & li {
+            color: $text-color-quatriary;
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        &--bold {
+            color: $text-color-tertiary;
+            font-weight: 700;
+        }
+    }
 }
+
+
 
 .about-contact {
     color: $text-color-quatriary;
