@@ -9,7 +9,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-image: url(/images/main-background.jpg);
+  background-image: url(../images/main-background.jpg);
   min-height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -72,8 +72,10 @@ body {
     border-radius: 10px;
     color: #F69B16;
     font-size: 3.6rem;
-    font-weight: 300;
-    max-width: 30rem; }
+    font-weight: 300; }
+
+.about-contact {
+  color: #4E5458; }
 
 .card-row {
   padding: 6.4rem 14rem 9.1rem 14rem; }
@@ -83,16 +85,21 @@ body {
   height: 70rem;
   width: 50rem; }
   .card-title-box {
-    background-color: #45678A; }
+    background-color: #45678A;
+    height: 14rem;
+    padding: 4rem 7rem; }
   .card-back {
     display: none; }
 
 .header {
   display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
+  align-items: flex-end;
+  justify-content: space-between;
   margin: 0 auto;
+  margin-bottom: 2.5rem;
   max-width: 80vw; }
+  .header__text-box {
+    display: flex; }
 
 .hero-box {
   width: 27rem; }
@@ -104,6 +111,20 @@ body {
   margin: 0 auto;
   max-width: 80vw; }
 
+.leaflet-popup-content img {
+  width: 100%; }
+
+#mapid {
+  height: 66vh;
+  width: 100%; }
+
+.about-contact {
+  background-color: rgba(174, 175, 177, 0.95); }
+  .about-contact-heading-box {
+    background-color: rgba(78, 84, 88, 0.5); }
+  .about-contact-row {
+    display: flex; }
+
 .section-stats {
   background-color: rgba(31, 84, 121, 0.9);
   margin-top: 6.5rem; }
@@ -113,7 +134,3 @@ body {
 .card-row {
   display: flex;
   justify-content: space-around; }
-
-#mapid {
-  height: 66vh;
-  width: 100%; }

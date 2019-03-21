@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Quick Start - Leaflet</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+
+    <style>
+        .leaflet-popup {
+
+            font-size: 50px;
+
+        }
+
+        .leaflet-content-wrapper {
+            padding: 50px;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+</head>
+
+<body>
+
+    <div id="mapid" style="width: 600px; height: 400px;"></div>
+    <script>
+        var mymap = L.map('mapid').setView([
+            50.0227958874474, -125.25049209594727], 16);
+
+        var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        var blackIcon = L.icon({
+            iconUrl: 'map-marker.png',
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],
+            popupAnchor: [0, -40]
+        });
+
+        // L.marker([50.0227958874474, -125.25049209594727]).addTo(mymap).bindPopup("hi");
+        L.marker([50.0227958874474, -125.25049209594727], { icon: blackIcon }).addTo(mymap).bindPopup("<h1 style=\"color:teal\">Dale!</h1>");
+
+
+
+    //     var shapeStyle = {
+    //         color: 'green',
+    //         fillColor: '#green',
+    //         fillOpacity: 0.25
+    //     }
+
+
+
+    //     L.circle([ 50.0227958874474, -125.25049209594727], 500, shapeStyle).addTo(mymap).bindPopup("I am a circle.");
+
+    //     L.polygon([
+    //         [ 50.0227958874474, -125.25049209594727],
+    //         [ 50.0227958874474, -125.50049209594727],
+    //         [ 50.9227958874474, -125.95049209594727]
+    //     ],
+    //    shapeStyle).addTo(mymap).bindPopup("I am a polygon.");
+
+
+        // var popup = L.popup();
+
+        // function onMapClick(e) {
+        //     mymap.setView([
+        //         50.0227958874474, -125.25049209594727], 12)
+        //     popup
+        //         .setLatLng(e.latlng)
+        //         .setContent("You clicked the map at " + e.latlng.toString())
+        //         .openOn(mymap);
+        // }
+
+        // mymap.on('click', onMapClick);
+    </script>
+
+</body>
+
+</html>

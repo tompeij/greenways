@@ -1,9 +1,14 @@
 .header {
     display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
+    align-items: flex-end;
+    justify-content: space-between;
     margin: 0 auto;
+    margin-bottom: 2.5rem;
     max-width: 80vw;
+
+    &__text-box {
+        display: flex;
+    }
 }
 .hero-box {
     width: 27rem;

@@ -1,0 +1,12 @@
+.about-contact {
+    background-color: $background-color-grey;
+
+    &-heading-box {
+        background-color: $background-color-grey-dark;
+
+    }
+
+    &-row {
+        display: flex;
+    }
+}
