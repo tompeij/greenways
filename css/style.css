@@ -1,3 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-image: url(../images/main-background.jpg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #AEAFB1;
+  box-sizing: border-box; }
+
 .card {
   height: 70rem;
   perspective: 150rem;
@@ -17,29 +40,6 @@
     transform: rotateY(180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  background-image: url(../images/main-background.jpg);
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #AEAFB1;
-  box-sizing: border-box; }
 
 .heading-primary {
   margin-left: 2rem; }
@@ -106,6 +106,29 @@ body {
 
 .about-contact {
   color: #4E5458; }
+  .about-contact__heading {
+    font-weight: 300;
+    line-height: 1.35; }
+    .about-contact__heading--primary {
+      font-size: 5.8rem; }
+    .about-contact__heading--secondary {
+      font-size: 3.2rem; }
+  .about-contact__text-box--heading {
+    font-size: 2.4rem;
+    font-weight: 500; }
+  .about-contact__text-box--details {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.5;
+    padding-top: 1rem; }
+  .about-contact__contact-box--heading {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem; }
+  .about-contact .form__input {
+    font-size: 1.4rem;
+    font-family: 'lato'; }
 
 .card-row {
   padding: 6.4rem 14rem 9.1rem 14rem; }
@@ -159,11 +182,38 @@ body {
   width: 100%; }
 
 .about-contact {
-  background-color: rgba(174, 175, 177, 0.95); }
+  background-color: rgba(174, 175, 177, 0.95);
+  margin-top: 5rem; }
   .about-contact-heading-box {
-    background-color: rgba(78, 84, 88, 0.5); }
-  .about-contact-row {
-    display: flex; }
+    background-color: rgba(78, 84, 88, 0.5);
+    padding: 5.4rem 0 5.4rem; }
+    .about-contact-heading-box__heading {
+      align-items: center;
+      display: flex;
+      margin: 0 auto;
+      max-width: 80vw; }
+  .about-contact__heading {
+    padding-left: 1.6rem; }
+  .about-contact__row {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 6.7rem; }
+  .about-contact__text-box {
+    width: 53.6rem;
+    height: 55rem; }
+  .about-contact__form {
+    width: 53.6rem; }
+  .about-contact .form__input {
+    background-color: #777B7F;
+    border: none;
+    border-radius: 5px;
+    height: 5rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    width: 100%; }
+  .about-contact .form__group textarea {
+    height: 15rem;
+    padding-top: 1.6rem; }
 
 .section-stats {
   background-color: rgba(31, 84, 121, 0.9);
@@ -175,3 +225,15 @@ body {
 .card-row {
   display: flex;
   justify-content: space-around; }
+
+.footer {
+  align-items: center;
+  background-color: #4E5458;
+  color: #F69B16;
+  display: flex;
+  font-size: 1.4rem;
+  height: 20rem;
+  justify-content: space-around;
+  margin-top: 5rem; }
+  .footer ul {
+    list-style-type: none; }

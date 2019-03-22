@@ -1,12 +1,56 @@
 .about-contact {
     background-color: $background-color-grey;
+    margin-top: 5rem;
 
     &-heading-box {
+        
         background-color: $background-color-grey-dark;
+        padding: 5.4rem 0 5.4rem;
 
+        &__heading {
+            align-items: center;
+            display: flex;
+            margin: 0 auto;
+            max-width: 80vw;
+        }
     }
 
-    &-row {
+    &__heading {
+        padding-left: 1.6rem;
+    }
+
+    &__row {
         display: flex;
+        justify-content: space-around;
+        // padding-left: 27.8rem;
+        padding-top: 6.7rem;
+    }
+
+    &__text-box {
+
+        width: 53.6rem;
+        height: 55rem;
+    }
+
+    &__contact-box {
+        // padding-left: 29.2rem;
+    }
+
+    &__form {
+        width: 53.6rem;
+    }
+    & .form__input {
+        background-color: $color-grey-dark;
+        border: none;
+        border-radius: 5px;
+        height: 5rem;
+        margin-bottom: 3rem;
+        padding-left: 2rem;
+        width: 100%;
+    }
+
+    & .form__group textarea {
+        height: 15rem;
+        padding-top: 1.6rem;
     }
 }

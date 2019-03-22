@@ -93,4 +93,46 @@
 
 .about-contact {
     color: $text-color-quatriary;
+
+    &__heading {
+
+        font-weight: 300;
+        line-height: 1.35;
+
+        &--primary {
+            font-size: 5.8rem;
+        }
+        &--secondary {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__text-box {
+        
+        &--heading {
+            font-size: 2.4rem;
+            font-weight: 500;
+        }
+
+        &--details {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 2.5;
+            padding-top: 1rem;
+        }
+    }
+
+    &__contact-box {
+        &--heading {
+            font-size: 2.4rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    & .form__input {
+        font-size: 1.4rem; 
+        font-family: 'lato';
+    }
 }
