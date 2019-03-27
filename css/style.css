@@ -64,6 +64,9 @@ body {
     font-size: 7rem;
     line-height: 1;
     width: 34rem; }
+    @media only screen and (max-width: 114rem) {
+      .heading-primary--main {
+        font-size: 6rem; } }
     @media only screen and (max-width: 90rem) {
       .heading-primary--main {
         font-size: 5rem; } }
@@ -193,9 +196,61 @@ body {
       .about-contact__contact-box--heading {
         font-size: 2rem;
         margin-bottom: 1.5rem; } }
-  .about-contact .form__input {
+  .about-contact .form__input::placeholder {
+    color: #1B2F33;
     font-size: 1.4rem;
     font-family: 'lato'; }
+
+.btn-submit {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: 'lato';
+  font-weight: 300;
+  color: #142326;
+  font-size: 2.2rem;
+  background: rgba(174, 175, 177, 0.95);
+  border: solid #4E5458 2px;
+  text-decoration: none;
+  height: 6rem;
+  width: 20rem;
+  transition: all .4s; }
+  @media only screen and (max-width: 90rem) {
+    .btn-submit {
+      font-size: 1.8rem;
+      height: 5rem;
+      width: 18rem; } }
+
+.btn-submit:hover {
+  background: rgba(78, 84, 88, 0.5);
+  cursor: pointer;
+  text-decoration: none; }
+
+.btn-share {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: 'lato';
+  font-weight: 300;
+  color: #F69B16;
+  font-size: 2.2rem;
+  border: none;
+  background: rgba(46, 56, 59, 0.55);
+  text-decoration: none;
+  height: 6rem;
+  width: 20rem;
+  margin-top: 3rem;
+  transition: all .4s; }
+  @media only screen and (max-width: 90rem) {
+    .btn-share {
+      font-size: 1.8rem;
+      height: 5rem;
+      width: 18rem; } }
+
+.btn-share:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgba(46, 56, 59, 0); }
 
 .card-row {
   padding: 6.4rem 0 9.1rem 0; }
@@ -302,6 +357,9 @@ body {
   .about-contact__text-box {
     width: 53.6rem;
     height: 55rem; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__text-box {
+        height: 43rem; } }
   .about-contact__form {
     width: 53.6rem; }
   .about-contact .form__input {

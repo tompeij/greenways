@@ -32,6 +32,11 @@
 
         width: 53.6rem;
         height: 55rem;
+        @media only screen and (max-width: 90rem) {
+
+            height: 43rem;
+
+        }
     }
 
     &__contact-box {

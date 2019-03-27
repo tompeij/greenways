@@ -1,0 +1,66 @@
+.btn-submit {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: 'lato';
+    font-weight: 300;
+    color: #142326;
+    font-size: 2.2rem;
+    background: $background-color-grey;
+    border: solid $text-color-quatriary 2px;
+    text-decoration: none;
+
+    height: 6rem;
+    width: 20rem;
+
+    transition: all .4s;
+
+    @media only screen and (max-width: 90rem) {
+
+        font-size: 1.8rem;
+        height: 5rem;
+        width: 18rem;
+
+    }
+  }
+  
+  .btn-submit:hover {
+    background: $background-color-grey-dark;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-share {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-family: 'lato';
+    font-weight: 300;
+    color: $text-color-secondary;
+    font-size: 2.2rem;
+    border: none;
+    background: rgba(46, 56, 59, .55);
+    
+    text-decoration: none;
+
+    height: 6rem;
+    width: 20rem;
+    margin-top: 3rem;
+
+    transition: all .4s;
+
+    @media only screen and (max-width: 90rem) {
+
+        font-size: 1.8rem;
+        height: 5rem;
+        width: 18rem;
+
+    }
+  }
+
+  .btn-share:hover {
+  
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(46, 56, 59, 0);
+  }
