@@ -6,12 +6,23 @@
     margin-bottom: 2.5rem;
     max-width: 80vw;
 
+    @media only screen and (max-width: 114rem) { 
+
+        max-width: 90vw;
+
+    }
+
     &__text-box {
         display: flex;
     }
 }
 .hero-box {
     width: 27rem;
+    @media only screen and (max-width: 90rem) { 
+
+        width: 22rem;
+
+    }
     &-fact {
         display: flex;
         justify-content: space-between;

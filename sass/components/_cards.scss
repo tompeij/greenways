@@ -1,15 +1,59 @@
 .card-row {
-    padding: 6.4rem 14rem 9.1rem 14rem;
+    padding: 6.4rem 0 9.1rem 0;
+
+    @media only screen and (max-width: 114rem) { 
+
+        .card {
+            height: 60rem;
+            width: 40rem;
+
+            &__side {
+                height: 60rem;
+            }
+                    
+            &-title-box {
+               
+                height: 14rem;
+                padding: 4rem 7rem;
+            }
+        
+            &-img-wrapper {
+
+                height: 40rem;
+
+                img {
+                    width: 70%;
+                }
+
+            }
+        
+            &__details {
+                padding: 2.44rem 3.75rem 0;
+        
+                & li {
+                    padding-bottom: 2rem;
+                }
+            }
+
+            @media only screen and (max-width: 90rem) { 
+
+                width: 39rem;
+        
+            }
+        }
+
+    };
+
+    
 }
 
 .card {
-    width: 25%;
-    max-width: 50rem;
-    min-width: 46rem;
-
+    width: 50rem;
+    height: 70rem;
     &__side {
         background-color: $color-blue-extra_light;
         box-shadow: 0 20px 15px rgba(0, 0, 0, .16);
+        height: 70rem;
     }
 
     &-title-box {
@@ -22,7 +66,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 56rem;
+        height: 54rem;
     }
 
     &__details {
@@ -32,4 +76,6 @@
             padding-bottom: 2rem;
         }
     }
+
+    
 }

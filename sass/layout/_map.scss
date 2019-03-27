@@ -1,6 +1,12 @@
 .map-box {
     margin: 0 auto;
     max-width: 80vw;
+
+    @media only screen and (max-width: 114rem) { 
+
+        max-width: 90vw;
+
+    }
 }
 
 .leaflet-popup-content img {
@@ -10,4 +16,9 @@
 #mapid {
     height: 66vh;
     width: 100%;
+    @media only screen and (max-width: 90rem) {
+
+        height: 40vw;
+
+    }
 }

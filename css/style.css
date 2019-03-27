@@ -1,3 +1,20 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -22,12 +39,10 @@ body {
   box-sizing: border-box; }
 
 .card {
-  height: 70rem;
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative; }
   .card__side {
-    height: 70rem;
     transition: all 1s ease;
     position: absolute;
     top: 0;
@@ -49,6 +64,9 @@ body {
     font-size: 7rem;
     line-height: 1;
     width: 34rem; }
+    @media only screen and (max-width: 90rem) {
+      .heading-primary--main {
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-weight: 300;
@@ -56,23 +74,44 @@ body {
     line-height: 1;
     padding-top: 1rem;
     width: 34rem; }
+    @media only screen and (max-width: 90rem) {
+      .heading-primary--sub {
+        font-size: 2.8rem; } }
 
 .hero-box {
   font-weight: 300; }
+  @media only screen and (max-width: 114rem) {
+    .hero-box {
+      line-height: 1.4; } }
   .hero-box .heading-secondary {
     color: #F69B16;
     font-size: 4.8rem;
     font-weight: 300; }
+    @media only screen and (max-width: 90rem) {
+      .hero-box .heading-secondary {
+        font-size: 3.4rem; } }
   .hero-box-text {
     font-size: 1.5rem; }
+    @media only screen and (max-width: 90rem) {
+      .hero-box-text {
+        font-size: 1.3rem; } }
   .hero-box__heading-fact {
     font-size: 2.1rem;
     font-weight: 300; }
+    @media only screen and (max-width: 90rem) {
+      .hero-box__heading-fact {
+        font-size: 1.6rem; } }
     .hero-box__heading-fact--stat {
       color: #F69B16;
       font-size: 2.1rem; }
+      @media only screen and (max-width: 90rem) {
+        .hero-box__heading-fact--stat {
+          font-size: 1.6rem; } }
     .hero-box__heading-fact--unit {
       font-size: 1.4rem; }
+      @media only screen and (max-width: 90rem) {
+        .hero-box__heading-fact--unit {
+          font-size: 1.2rem; } }
 
 .section-stats-heading {
   color: #F69B16;
@@ -82,8 +121,14 @@ body {
   width: 100%; }
   .section-stats-heading__primary {
     font-size: 6.3rem; }
+    @media only screen and (max-width: 90rem) {
+      .section-stats-heading__primary {
+        font-size: 5rem; } }
   .section-stats-heading__secondary {
     font-size: 2.4rem; }
+    @media only screen and (max-width: 90rem) {
+      .section-stats-heading__secondary {
+        font-size: 2rem; } }
 
 .card {
   text-align: center; }
@@ -91,7 +136,7 @@ body {
     border: 2px solid #F69B16;
     border-radius: 10px;
     color: #F69B16;
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-weight: 300; }
   .card__details ul {
     list-style-type: none; }
@@ -103,6 +148,12 @@ body {
   .card__details--bold {
     color: #1F5479;
     font-weight: 700; }
+  @media only screen and (max-width: 114rem) {
+    .card-title-text {
+      font-size: 2.5rem;
+      font-weight: 300; }
+    .card__details li {
+      font-size: 1.3rem; } }
 
 .about-contact {
   color: #4E5458; }
@@ -111,35 +162,71 @@ body {
     line-height: 1.35; }
     .about-contact__heading--primary {
       font-size: 5.8rem; }
+      @media only screen and (max-width: 90rem) {
+        .about-contact__heading--primary {
+          font-size: 4.5rem; } }
     .about-contact__heading--secondary {
       font-size: 3.2rem; }
+      @media only screen and (max-width: 90rem) {
+        .about-contact__heading--secondary {
+          font-size: 3rem; } }
   .about-contact__text-box--heading {
     font-size: 2.4rem;
     font-weight: 500; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__text-box--heading {
+        font-size: 2rem; } }
   .about-contact__text-box--details {
     font-family: 'Merriweather', serif;
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 2.5;
     padding-top: 1rem; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__text-box--details {
+        font-size: 1.6rem; } }
   .about-contact__contact-box--heading {
     font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 2.5rem; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__contact-box--heading {
+        font-size: 2rem;
+        margin-bottom: 1.5rem; } }
   .about-contact .form__input {
     font-size: 1.4rem;
     font-family: 'lato'; }
 
 .card-row {
-  padding: 6.4rem 14rem 9.1rem 14rem; }
+  padding: 6.4rem 0 9.1rem 0; }
+  @media only screen and (max-width: 114rem) {
+    .card-row .card {
+      height: 60rem;
+      width: 40rem; }
+      .card-row .card__side {
+        height: 60rem; }
+      .card-row .card-title-box {
+        height: 14rem;
+        padding: 4rem 7rem; }
+      .card-row .card-img-wrapper {
+        height: 40rem; }
+        .card-row .card-img-wrapper img {
+          width: 70%; }
+      .card-row .card__details {
+        padding: 2.44rem 3.75rem 0; }
+        .card-row .card__details li {
+          padding-bottom: 2rem; } }
+  @media only screen and (max-width: 114rem) and (max-width: 90rem) {
+    .card-row .card {
+      width: 39rem; } }
 
 .card {
-  width: 25%;
-  max-width: 50rem;
-  min-width: 46rem; }
+  width: 50rem;
+  height: 70rem; }
   .card__side {
     background-color: #E2E3E5;
-    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.16); }
+    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.16);
+    height: 70rem; }
   .card-title-box {
     background-color: #45678A;
     height: 14rem;
@@ -148,7 +235,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 56rem; }
+    height: 54rem; }
   .card__details {
     padding: 2.44rem 3.75rem 0; }
     .card__details li {
@@ -161,11 +248,17 @@ body {
   margin: 0 auto;
   margin-bottom: 2.5rem;
   max-width: 80vw; }
+  @media only screen and (max-width: 114rem) {
+    .header {
+      max-width: 90vw; } }
   .header__text-box {
     display: flex; }
 
 .hero-box {
   width: 27rem; }
+  @media only screen and (max-width: 90rem) {
+    .hero-box {
+      width: 22rem; } }
   .hero-box-fact {
     display: flex;
     justify-content: space-between; }
@@ -173,6 +266,9 @@ body {
 .map-box {
   margin: 0 auto;
   max-width: 80vw; }
+  @media only screen and (max-width: 114rem) {
+    .map-box {
+      max-width: 90vw; } }
 
 .leaflet-popup-content img {
   width: 100%; }
@@ -180,6 +276,9 @@ body {
 #mapid {
   height: 66vh;
   width: 100%; }
+  @media only screen and (max-width: 90rem) {
+    #mapid {
+      height: 40vw; } }
 
 .about-contact {
   background-color: rgba(174, 175, 177, 0.95);
@@ -191,12 +290,14 @@ body {
       align-items: center;
       display: flex;
       margin: 0 auto;
-      max-width: 80vw; }
+      max-width: 85vw; }
   .about-contact__heading {
     padding-left: 1.6rem; }
   .about-contact__row {
     display: flex;
     justify-content: space-around;
+    max-width: 85vw;
+    margin: 0 auto;
     padding-top: 6.7rem; }
   .about-contact__text-box {
     width: 53.6rem;
@@ -208,11 +309,11 @@ body {
     border: none;
     border-radius: 5px;
     height: 5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     padding-left: 2rem;
     width: 100%; }
   .about-contact .form__group textarea {
-    height: 15rem;
+    height: 13rem;
     padding-top: 1.6rem; }
 
 .section-stats {
@@ -224,7 +325,15 @@ body {
 
 .card-row {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  max-width: 85vw;
+  margin: 0 auto; }
+  @media only screen and (max-width: 114rem) {
+    .card-row {
+      max-width: 90vw; } }
+  @media only screen and (max-width: 90rem) {
+    .card-row {
+      max-width: 100vw; } }
 
 .footer {
   align-items: center;
