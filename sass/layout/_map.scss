@@ -1,4 +1,7 @@
 .map-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     margin: 0 auto;
     max-width: 80vw;
 
@@ -16,6 +19,7 @@
 #mapid {
     height: 66vh;
     width: 100%;
+    margin-bottom: 3rem;
     @media only screen and (max-width: 90rem) {
 
         height: 40vw;
