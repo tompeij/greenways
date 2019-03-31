@@ -80,7 +80,35 @@
                 <span>Share</span>
                 <div class="btn-container">
                     <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
+                    <!-- <i class="fab fa-twitter"></i> -->
+                    <a href="#" class="twitter-share"><i class="fab fa-twitter"></i></a>
+                    <script>
+                        var getWindowOptions = function () {
+                            var width = 500;
+                            var height = 350;
+                            var left = (window.innerWidth / 2) - (width / 2);
+                            var top = (window.innerHeight / 2) - (height / 2);
+
+                            return [
+                                'resizable,scrollbars,status',
+                                'height=' + height,
+                                'width=' + width,
+                                'left=' + left,
+                                'top=' + top,
+                            ].join();
+                        };
+
+                        var twitterBtn = document.querySelector('.twitter-share');
+                        var text = encodeURIComponent('Hey everyone, come & see how good I look!');
+                        var shareUrl = 'https://twitter.com/intent/tweet?url=' + location.href + '&text=' + text;
+                        twitterBtn.href = shareUrl; // 1
+
+                        twitterBtn.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            var win = window.open(shareUrl, 'ShareOnTwitter', getWindowOptions());
+                            win.opener = null; // 2
+                        });
+                    </script>
                     <i class="fab fa-instagram"></i>
                 </div>
             </div>
@@ -283,12 +311,12 @@
                 </ul>
             </div>
             <div class="newsletter">
-                    <span class="newsletter__text">Subscribe to our newsletter</span>
+                <span class="newsletter__text">Subscribe to our newsletter</span>
                 <form action="#">
                     <input type="email" class="newsletter__input" placeholder="Email" id="email" required>
                     <button class="newsletter__button">OK</button>
                 </form>
-                
+
             </div>
             <div class="address">
                 <ul>
