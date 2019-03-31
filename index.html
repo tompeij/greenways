@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin="" />
@@ -31,7 +32,23 @@
                     <span class="heading-primary--sub">Campbell River</span>
                 </h1>
             </div>
-            <div class="weather-box"></div>
+            <div class="weather-box">
+                <a class="weatherwidget-io" href="https://forecast7.com/en/50d03n125d27/campbell-river/"
+                    data-font="Helvetica" data-mode="Forecast" data-days="5" data-textcolor="#AEAFB1"
+                    data-highcolor="#F69B16" data-lowcolor="#90A0B7" data-suncolor="#F69B16" data-cloudcolor="#90A0B7"
+                    data-raincolor="#90A0B7">Campbell River, BC, Canada</a>
+                <script>
+                    ! function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = 'https://weatherwidget.io/js/widget.min.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'weatherwidget-io-js');
+                </script>
+            </div>
             <div class="hero-box">
                 <h2 class="heading-secondary">Be a hero</h2>
                 <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
@@ -55,7 +72,9 @@
             </div>
         </header>
         <section class="map-box">
-            <div id="mapid"></div>
+            <div class="overlay">
+                <div id="mapid"></div>
+            </div>
             <!-- <button class="btn-share">Share</button> -->
             <div class="btn_wrap">
                 <span>Share</span>
@@ -203,20 +222,22 @@
         <section class="about-contact">
             <div class="about-contact-heading-box">
                 <div class="about-contact-heading-box__heading">
-                        <div class="about-contact__logo">
-                                <img src="images/greenways_logo.svg" alt="Greenways Land Trust Frog Logo">
-                        </div>
-                        
-                        <div class="about-contact__heading">
-                            <h2 class="about-contact__heading about-contact__heading--primary">Greeways Land Trust</h2>
-                            <h3 class="about-contact__heading about-contact__heading--secondary">Enhancing Natural Areas for People and Wildlife</h3>
-                        </div>
+                    <div class="about-contact__logo">
+                        <img src="images/greenways_logo.svg" alt="Greenways Land Trust Frog Logo">
+                    </div>
+
+                    <div class="about-contact__heading">
+                        <h2 class="about-contact__heading about-contact__heading--primary">Greeways Land Trust</h2>
+                        <h3 class="about-contact__heading about-contact__heading--secondary">Enhancing Natural Areas for
+                            People and Wildlife</h3>
+                    </div>
                 </div>
             </div>
             <div class="about-contact__row">
                 <div class="about-contact__text-box">
                     <h3 class="about-contact__text-box--heading">We Engage, we link, we steward.</h3>
-                    <p class="about-contact__text-box--details">Greenways Land Trust is a registered charity and conservation
+                    <p class="about-contact__text-box--details">Greenways Land Trust is a registered charity and
+                        conservation
                         organization that works to enhance the community through the creation and management of
                         greenways
                         networks, based on principles of stream and land stewardship. We act as an umbrella organization
@@ -225,7 +246,7 @@
                         support the activities of volunteer streamkeepers and stewards.</p>
                 </div>
                 <div class="about-contact__contact-box">
-                        <h3 class="about-contact__contact-box--heading">Contact Us</h3>
+                    <h3 class="about-contact__contact-box--heading">Contact Us</h3>
                     <div class="about-contact__form">
                         <form action="#" class="form">
                             <div class="form__group">
@@ -237,7 +258,7 @@
                                 <label for="Email" class="form__label"></label>
                             </div>
                             <div class="form__group">
-                                    <textarea placeholder="Message" class="form__input"></textarea> 
+                                <textarea placeholder="Message" class="form__input"></textarea>
                                 <label for="message" class="form__label"></label>
                             </div>
                             <div class="form__group">
@@ -263,8 +284,8 @@
                     <button>OK</button>
                 </form>
                 <div class="copyright">
-                        <p class="copyright__text">&#169; 2019 Greenways Land Trust</p>
-                    </div>
+                    <p class="copyright__text">&#169; 2019 Greenways Land Trust</p>
+                </div>
             </div>
             <div class="address">
                 <ul>
