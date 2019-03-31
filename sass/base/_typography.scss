@@ -244,11 +244,12 @@
             font-size: 2.4rem;
             font-weight: 500;
             margin-bottom: 2.5rem;
+
             @media only screen and (max-width: 90rem) {
 
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
-    
+
             }
         }
     }
@@ -257,5 +258,25 @@
         color: #1B2F33;
         font-size: 1.4rem;
         font-family: 'lato';
+    }
+}
+
+footer {
+    & .newsletter {
+        &__input {
+            &::placeholder {
+                color: $text-color-secondary;
+                font-size: 1.4rem;
+                font-family: 'lato';
+                font-weight: 300;
+            }
+        }
+
+        &__button {
+            color: $text-color-secondary;
+            font-size: 1.4rem;
+            font-family: 'lato';
+            font-weight: 300;
+        }
     }
 }
