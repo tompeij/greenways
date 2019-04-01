@@ -6,7 +6,8 @@
     <meta property="og:url" content="https://tompeij.github.io/greenways/" />
     <meta property="og:type" content="https://tompeij.github.io/greenways/" />
     <meta property="og:title" content="Greenways Loop" />
-    <meta property="og:description" content="Greenways Loop a cycling trail that links the entire city of Campbell River with accessable transportation. Bikes for the win!" />
+    <meta property="og:description"
+        content="Greenways Loop a cycling trail that links the entire city of Campbell River with accessable transportation. Bikes for the win!" />
     <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
 
     <meta charset="UTF-8">
@@ -85,9 +86,7 @@
             <!-- <button class="btn-share">Share</button> -->
             <div class="btn_wrap">
                 <span>Share</span>
-                <div class="btn-container">
-                    <!-- <i class="fab fa-facebook-f"></i> -->
-                    <!-- <i class="fab fa-twitter"></i> -->
+                <div class="btn-container">                
                     <a href="#" class="twitter-share"><i class="fab fa-twitter"></i></a>
                     <script>
                         var getWindowOptions = function () {
@@ -117,17 +116,18 @@
                     </script>
                     <a href="#" class="facebook-share"><i class="fab fa-facebook-f"></i></a>
                     <script>
-                            var fbButton = document.querySelector('.facebook-share');
-                            var url = window.location.href;
-                            
-                            fbButton.addEventListener('click', function() {
-                                window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
-                                    'facebook-share-dialog',
-                                    'width=800,height=600'
-                                );
-                                return false;
-                            });
-                            </script>
+                        var fbButton = document.querySelector('.facebook-share');
+                        var url = window.location.href;
+
+                        fbButton.addEventListener('click', function () {
+                            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+                                'facebook-share-dialog',
+                                'width=800,height=600,left=250,top=250'
+                            );
+                            return false;
+                        });
+                    </script>
+                    <i class="fab fa-instagram"></i>
                 </div>
             </div>
         </section>
