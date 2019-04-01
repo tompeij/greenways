@@ -3,8 +3,6 @@
 
 <head>
     <title>Greenways Loop</title>
-    <!-- You can use Open Graph tags to customize link previews.
-        Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
     <meta property="og:url" content="https://tompeij.github.io/greenways/" />
     <meta property="og:type" content="https://tompeij.github.io/greenways/" />
     <meta property="og:title" content="Greenways Loop" />
@@ -29,18 +27,6 @@
 </head>
 
 <body>
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
     <div class="container">
         <header class="header">
             <!-- <div class="header__logo-box">
@@ -100,8 +86,7 @@
             <div class="btn_wrap">
                 <span>Share</span>
                 <div class="btn-container">
-                    <i class="fab fa-facebook-f" data-href="https://tompeij.github.io/greenways/"
-                    data-layout="button_count"></i>
+                    <!-- <i class="fab fa-facebook-f"></i> -->
                     <!-- <i class="fab fa-twitter"></i> -->
                     <a href="#" class="twitter-share"><i class="fab fa-twitter"></i></a>
                     <script>
@@ -119,7 +104,6 @@
                                 'top=' + top,
                             ].join();
                         };
-
                         var twitterBtn = document.querySelector('.twitter-share');
                         var text = encodeURIComponent('Hey everyone, come check out the Loop! It\'\s amazing!');
                         var shareUrl = 'https://twitter.com/intent/tweet?url=' + location.href + '&text=' + text;
@@ -131,7 +115,19 @@
                             win.opener = null; // 2
                         });
                     </script>
-                    <i class="fab fa-instagram"></i>
+                    <a href="#" class="facebook-share"><i class="fab fa-facebook-f"></i></a>
+                    <script>
+                            var fbButton = document.querySelector('.facebook-share');
+                            var url = window.location.href;
+                            
+                            fbButton.addEventListener('click', function() {
+                                window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+                                    'facebook-share-dialog',
+                                    'width=800,height=600'
+                                );
+                                return false;
+                            });
+                            </script>
                 </div>
             </div>
         </section>
