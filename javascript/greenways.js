@@ -1,9 +1,27 @@
-var map = L.map('mapid').setView([50.025, -125.257076], 15);
+// var map = L.map('mapid').setView([50.025, -125.257076], 15);
+
+var map = L.map('mapid', {
+    center: [50.017003, -125.240807],
+    zoom: 14,
+    scrollWheelZoom: false
+});
+
+
+var smallMap = L.map('smallMap', {
+    center: [50.017003, -125.240807],
+    zoom: 10,
+    scrollWheelZoom: false
+});
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(smallMap);
 
 var mapIcon = L.Icon.extend({
     options: {
@@ -24,81 +42,56 @@ frontBikeIcon = new mapIcon({
 })
 
 
-L.marker([49.995831, -125.258814], {
+L.marker([50.000348, -125.258939], {
     icon: sideBikeIcon
-}).addTo(map);
+}).addTo(map).bindPopup("<img src=\"images/beaver_lodge_trails.png\"><div class=\"popup-text\"><h2>Beaver Lodge Trails</h2><p>Built near the city of Campbell River, this winding network of trails and pathways is home to many runners, walkers, cyclists and even equestrians. Snow free most of the year, the trails are a great place for winter and night riding or bringing beginner riders to help build their skills. Recent trail work and improvements have been occurring through the park.</p></div>");
 
-L.marker([50.0324449, -125.2441975], {
+L.marker([50.033277, -125.243906], {
     icon: boatIcon
-}).addTo(map).bindPopup("<img src=\"discovery-marina.png\"><h2>Discovery Marina</h2><p>Discovery Harbour Marina is a full service marina offering boat moorage, power, water, washrooms, showers, laundry facilities, parking (including boat trailers), and ice. Marine fuel is also available.</p>");
+}).addTo(map).bindPopup("<img src=\"images/discovery-marina.png\"><div class=\"popup-text\"><h2>Discovery Marina</h2><ul><li>Address: 1434 Ironwood St, Campbell River, BC V9W 5T5</li><li>Hours:  Open 8 a.m. ⋅ Closes 6 p.m.</li><li>Phone: (250) 287-2614</li></ul><p>Discovery Harbour Marina is a full service marina offering boat moorage, power, water, washrooms, showers, laundry facilities, parking (including boat trailers), and ice. Marine fuel is also available.</p></div>");
 
-L.marker([50.0159652, -125.237579], {
+L.marker([50.015838, -125.234754], {
     icon: frontBikeIcon
-}).addTo(map);
+}).addTo(map).bindPopup("<img src=\"images/sequoia_park.png\"><div class=\"popup-text\"><h2>Sequoia Park</h2><p>The bright orange Torii Gate prominently displayed at Sequoia Park was a gift from our sister city of Ishikari, Japan. It is the first authentic Torii gate on Canadian soil, beach access, picnic tables and benches, a stop on the Rotary Sea Walk.</p></div>");
+
+L.marker([49.995038, -125.228734], {
+    icon: frontBikeIcon
+}).addTo(map).bindPopup("<img src=\"images/rotary-beach-park.jpg\"><div class=\"popup-text\"><h2>Rotary Beach Park</h2><p>This quaint little stop along the Rotary Sea Walk is home to many driftwood carvings, picnic tables, benches and wash rooms; it is a great place for a family picnic. Here you will find the Sally Campbell River Sea Walk Park Rotary Beach park Vancouver IslandWellman memorial garden, with tributes to many of our dearly departed friends and neighbours and because it is on the Rotary Seawalk course there are fantastic ocean views.</p></div>");
+
+L.marker([50.000071, -125.230413], {
+    icon: frontBikeIcon
+}).addTo(map).bindPopup("<img src=\"images/50th_parallel.jpg\"><div class=\"popup-text\"><h2>50th Parallel Marker</h2><p>This 50th parallel marker was placed by the Rotary Club. It is on the Seawalk, another Rotary project. It is just one of many things to enjoy as you stroll along. At the official unveiling, the Rotary invited anyone who was celebrating their 50th birthday or 50th wedding anniversary that year to be part of the official photo.</p></div>");
+
+
+L.marker([49.978457, -125.245556], {
+    icon: frontBikeIcon
+}).addTo(map).bindPopup("<img src=\"images/NIC-Campbell-river.jpg\"><div class=\"popup-text\"><h2>North Island College</h2><ul><li>Address: 1685 S Dogwood St, Campbell River, BC V9W 8C1</li><li>Hours:  Open 8 a.m. ⋅ Closes 8 p.m.</li><li>Phone: (250) 923-9700</li></ul><p>There are two NIC facilities in Campbell River: the Campbell River campus and the Vigar Vocational Centre.The Campbell River campus is shared with a high school, Timberline Secondary School – the only shared college/high school facility in Canada.</p></div>");
+
+L.marker([49.965439, -125.208524], {
+    icon: frontBikeIcon
+}).addTo(map).bindPopup("<img src=\"images/willow-point-estuary.png\"><div class=\"popup-text\"><h2>Willow Point Estuary</h2><p>Wonderful beach, great ambience most days as people are appreciating the ocean and mountain views at all times of the year. There is always driftwood all along the shoreline to light beach fires, also providing places to sit.</p></div>");
+
+
+
 
 var popup = L.popup();
 
 
-var greenLoop = [
-[50.030446610676194, -125.24493455886841],
-[50.032210928862064, -125.24688720703124],
-[50.033230895744616, -125.24862527847291],
-[50.03382356925167, -125.2501058578491],
-[50.034471366810685, -125.25257349014284],
-[50.034471366810685, -125.25536298751831],
-[50.03397518222964, -125.25722980499268],
-[50.03357547425511, -125.25862455368042],
-[50.03310684687554, -125.2601480484009],
-[50.03283118157475, -125.26104927062988],
-[50.03272091501134, -125.2617359161377],
-[50.03262443156067, -125.2628946304321],
-[50.03265199828064, -125.2635812759399],
-[50.03153553346378, -125.2637743949890],
-[50.03043282668518, -125.2637529373169],
-[50.02952307453171, -125.2635383605957],
-[50.02913711386621, -125.2636241912841],
-[50.02869601216479, -125.2642250061035],
-[50.02806192137138, -125.2652335166931],
-[50.02756567056317, -125.2656412124633],
-[50.02705562966726, -125.26583433151245],
-[50.02657315356456, -125.26581287384032],
-[50.02615959876196, -125.26561975479125],
-[50.02559440143997, -125.26506185531618],
-[50.02367819517118, -125.26300191879271 ],
-[50.02206521409676, -125.26119947433472],
-[50.02076927553599, -125.2599549293518],
-[50.01954223765783, -125.25866746902466],
-[50.01859091706178, -125.25789499282837],
-[50.01784639215138, -125.25740146636961],
-[50.01664685552821, -125.25716543197633],
-[50.01562653644029, -125.25733709335327],
-[50.01455104151456, -125.25768041610716],
-[50.0132549002597, -125.25838851928711],
-[50.01179325222318, -125.25911808013916],
-[50.0105659851036, -125.25963306427002],
-[50.00979375602025, -125.25969743728636],
-[50.00869055009080, -125.25943994522095],
-[50.00684262342671, -125.25901079177855],
-[50.00489808656736, -125.25864601135252],
-[50.0035051430135, -125.25832414627074],
-[50.00238800070007, -125.25823831558226],
-[50.00161564021822, -125.25843143463135],
-];
-var polyline = L.polyline(greenLoop, {
+var polyline = L.polyline(coords, {
     color: '#28502E',
     smoothFactor: 0.1,
     weight: 8,
     opacity: 0.7
 }).addTo(map);
 
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at " + e.latlng.toString())
-//         .openOn(map);
-// }
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
 
-// map.on('click', onMapClick);
+map.on('click', onMapClick);
 
 
 

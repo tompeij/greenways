@@ -428,9 +428,39 @@ footer .newsletter__button {
     .map-box {
       max-width: 90vw; } }
 
-.leaflet-popup-content img {
-  width: 100%;
-  height: 25rem; }
+.leaflet-container a.leaflet-popup-close-button {
+  width: 40px;
+  height: 40px;
+  font: 36px/34px Tahoma, Verdana, sans-serif;
+  color: #777B7F; }
+
+.leaflet-popup-content {
+  border-radius: 0;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  width: 43rem !important; }
+  .leaflet-popup-content-wrapper {
+    border-radius: 0;
+    border: none; }
+  .leaflet-popup-content img {
+    width: 100%;
+    height: 25rem; }
+  .leaflet-popup-content .popup-text {
+    padding: 2rem 6rem; }
+  .leaflet-popup-content h2 {
+    font-size: 3.6rem;
+    font-weight: 300;
+    padding-bottom: 2rem; }
+  .leaflet-popup-content ul {
+    list-style-type: none; }
+    .leaflet-popup-content ul li {
+      font-size: 1.2rem;
+      padding: .5rem 0; }
+  .leaflet-popup-content p {
+    font-size: 1.6rem;
+    line-height: 1.5; }
 
 #mapid {
   opacity: .9;
