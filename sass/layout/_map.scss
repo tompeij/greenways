@@ -4,6 +4,7 @@
     align-items: flex-end;
     margin: 0 auto;
     max-width: 80vw;
+    position: relative;
 
     @media only screen and (max-width: 114rem) {
 
@@ -69,6 +70,16 @@
         height: 40vw;
 
     }
+}
+
+#smallMap {
+    position: absolute;
+    opacity: .9;
+    height: 40rem;
+    width: 20rem;
+    right: 3rem;
+    top: 1rem;
+    z-index: 1000;
 }
 
 .overlay {

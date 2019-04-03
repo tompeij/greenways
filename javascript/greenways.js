@@ -1,16 +1,17 @@
 // var map = L.map('mapid').setView([50.025, -125.257076], 15);
 
 var map = L.map('mapid', {
-    center: [50.017003, -125.240807],
-    zoom: 14,
+    center: [50.025251, -125.256351],
+    zoom: 15,
     scrollWheelZoom: false
 });
 
 
 var smallMap = L.map('smallMap', {
-    center: [50.017003, -125.240807],
-    zoom: 10,
-    scrollWheelZoom: false
+    center: [50, -125.240807],
+    zoom: 12,
+    scrollWheelZoom: false,
+    zoomControl: false
 });
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +21,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(smallMap);
 
 var mapIcon = L.Icon.extend({
@@ -75,6 +75,12 @@ L.marker([49.965439, -125.208524], {
 
 
 var popup = L.popup();
+var circle = L.circle([50.031646, -125.253174], {radius: 1100}).addTo(smallMap);
+
+// var bounds = [[50.036793, -125.269843], [50.020785, -125.231478]];
+// L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(smallMap);
+
+// L.circle([50.024121, -125.250749], {radius: 1100}).addTo(smallMap);
 
 
 var polyline = L.polyline(coords, {
@@ -87,11 +93,20 @@ var polyline = L.polyline(coords, {
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
+        .setContent(e.latlng.toString())
         .openOn(map);
 }
 
+function onMouseUp(e) {
+    circle
+        .setLatLng(e.latlng)
+        .setRadius(1100)
+        .addTo(smallMap);
+        
+}
+
 map.on('click', onMapClick);
+map.on('mouseup', onMouseUp);
 
 
 

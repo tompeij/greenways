@@ -423,7 +423,8 @@ footer .newsletter__button {
   flex-direction: column;
   align-items: flex-end;
   margin: 0 auto;
-  max-width: 80vw; }
+  max-width: 80vw;
+  position: relative; }
   @media only screen and (max-width: 114rem) {
     .map-box {
       max-width: 90vw; } }
@@ -469,6 +470,15 @@ footer .newsletter__button {
   @media only screen and (max-width: 90rem) {
     #mapid {
       height: 40vw; } }
+
+#smallMap {
+  position: absolute;
+  opacity: .9;
+  height: 40rem;
+  width: 20rem;
+  right: 3rem;
+  top: 1rem;
+  z-index: 1000; }
 
 .overlay {
   position: relative;
