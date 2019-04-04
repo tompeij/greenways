@@ -101,7 +101,12 @@ L.marker([49.965439, -125.208524], {
 
 
 var popup = L.popup();
-var circle = L.circle([50.031646, -125.253174], {radius: 1100}).addTo(smallMap);
+var circle = L.circle([50.031646, -125.253174], {
+    radius: 1100,
+    color: '#45678A',
+    fillColor: '#45678A'
+
+}).addTo(smallMap);
 
 // var bounds = [[50.036793, -125.269843], [50.020785, -125.231478]];
 // L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(smallMap);

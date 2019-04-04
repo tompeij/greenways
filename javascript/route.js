@@ -4099,6 +4099,10 @@ const coords = [
     [
         -125.26361346244813,
         50.03252967084007
+    ],
+    [
+        -125.26362419128418,
+        50.032527947916144
     ]
 ];
 
@@ -4106,12 +4110,11 @@ const coords = [
 //to render coordinate points for a polyline
 
 function makePolyCCW(points) {
-    for (var i = 0; i < points.length; i++) {
-      let temp0 = points[i][0];
-      let temp1 = points[i][1];
-      points[i][0] = temp1;
-      points[i][1] = temp0;
-  }
-  }
+    for (var i = 0, len = points.length; i < len; i++) {
+        let temp = points[i][0];
+        points[i][0] = points[i][1];
+        points[i][1] = temp;
+    }
+}
 
-  makePolyCCW(coords);
+makePolyCCW(coords);
