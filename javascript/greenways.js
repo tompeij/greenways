@@ -1,8 +1,8 @@
 // var map = L.map('mapid').setView([50.025, -125.257076], 15);
 
 var map = L.map('mapid', {
-    center: [50.025851, -125.246351],
-    zoom: 15,
+    center: [50.017513, -125.243145],
+    zoom: 14,
     scrollWheelZoom: false
 });
 
@@ -127,7 +127,7 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
         .setContent(e.latlng.toString())
-        .openOn(smallMap);
+        .openOn(map);
 }
 
 function onMouseUp(e) {
@@ -138,7 +138,7 @@ function onMouseUp(e) {
         
 }
 
-// map.on('click', onMapClick);
+map.on('click', onMapClick);
 map.on('mouseup', onMouseUp);
 
 // document.querySelectorAll(".leaflet-marker-icon")[2].addEventListener("click", hideSmallMap);

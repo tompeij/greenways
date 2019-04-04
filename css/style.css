@@ -474,6 +474,7 @@ footer .newsletter__button {
       height: 40vw; } }
 
 #smallMap {
+  border: 2px dashed #45678A;
   position: absolute;
   opacity: .9;
   height: 45rem;
