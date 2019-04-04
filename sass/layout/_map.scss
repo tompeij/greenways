@@ -18,6 +18,8 @@
         font: 36px/34px Tahoma, Verdana, sans-serif;
         color: #777B7F;
 }
+
+
 .leaflet-popup-content {
     border-radius: 0;
     font-family: 'lato', sans-serif;
@@ -29,6 +31,7 @@
     &-wrapper {
         border-radius: 0;
         border: none;
+        padding: 0;
     }
     
     img {
@@ -61,6 +64,7 @@
 }
 
 #mapid {
+    position: relative;
     opacity: .9;
     height: 66vh;
     width: 100%;
@@ -75,11 +79,11 @@
 #smallMap {
     position: absolute;
     opacity: .9;
-    height: 40rem;
-    width: 20rem;
+    height: 45rem;
+    width: 25rem;
     right: 3rem;
     top: 1rem;
-    z-index: 1000;
+    z-index: 401;
 }
 
 .overlay {
