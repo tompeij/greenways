@@ -6,7 +6,6 @@ var map = L.map('mapid', {
     scrollWheelZoom: false
 });
 
-
 var smallMap = L.map('smallMap', {
     center: [49.9929, -125.235807],
     zoom: 12,
@@ -74,7 +73,7 @@ L.marker([50.000348, -125.258939], {
 
 L.marker([50.033277, -125.243906], {
     icon: boatIcon
-}).addTo(map).bindPopup("<img src=\"images/discovery-marina.png\"><div class=\"popup-text\"><h2>Discovery Marina</h2><ul><li>Address: 1434 Ironwood St, Campbell River, BC V9W 5T5</li><li>Hours:  Open 8 a.m. ⋅ Closes 6 p.m.</li><li>Phone: (250) 287-2614</li></ul><p>Discovery Harbour Marina is a full service marina offering boat moorage, power, water, washrooms, showers, laundry facilities, parking (including boat trailers), and ice. Marine fuel is also available.</p></div>");
+}).addTo(map).bindPopup('<iframe width="430" height="250" src="https://www.youtube.com/embed/O6vpuI_BNK8?controls=0&amp;start=5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class=\"popup-text\"><h2>Discovery Marina</h2><ul><li>Address: 1434 Ironwood St, Campbell River, BC V9W 5T5</li><li>Hours:  Open 8 a.m. ⋅ Closes 6 p.m.</li><li>Phone: (250) 287-2614</li></ul><p>Discovery Harbour Marina is a full service marina offering boat moorage, power, water, washrooms, showers, laundry facilities, parking (including boat trailers), and ice. Marine fuel is also available.</p></div>');
 
 L.marker([50.015838, -125.234754], {
     icon: sequoia
@@ -91,7 +90,7 @@ L.marker([50.000071, -125.230413], {
 
 L.marker([49.978457, -125.245556], {
     icon: nic
-}).addTo(map).bindPopup("<img src=\"images/NIC-Campbell-river.jpg\"><div class=\"popup-text\"><h2>North Island College</h2><ul><li>Address: 1685 S Dogwood St, Campbell River, BC V9W 8C1</li><li>Hours:  Open 8 a.m. ⋅ Closes 8 p.m.</li><li>Phone: (250) 923-9700</li></ul><p>There are two NIC facilities in Campbell River: the Campbell River campus and the Vigar Vocational Centre.The Campbell River campus is shared with a high school, Timberline Secondary School – the only shared college/high school facility in Canada.</p></div>");
+}).addTo(map).bindPopup("<iframe width=\"430\" height=\"250\" src=\"https://www.youtube.com/embed/RSwClLVBd80?controls=0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe><div class=\"popup-text\"><h2>North Island College</h2><ul><li>Address: 1685 S Dogwood St, Campbell River, BC V9W 8C1</li><li>Hours:  Open 8 a.m. ⋅ Closes 8 p.m.</li><li>Phone: (250) 923-9700</li></ul><p>There are two NIC facilities in Campbell River: the Campbell River campus and the Vigar Vocational Centre.The Campbell River campus is shared with a high school, Timberline Secondary School – the only shared college/high school facility in Canada.</p></div>");
 
 L.marker([49.965439, -125.208524], {
     icon: estuary
@@ -107,6 +106,11 @@ var circle = L.circle([50.031646, -125.253174], {
     fillColor: '#45678A'
 
 }).addTo(smallMap);
+
+// circle.fitBounds([
+//     [50.0384, -125.282074],
+//     [49.946315, -125.194789]
+// ]);
 
 // var bounds = [[50.036793, -125.269843], [50.020785, -125.231478]];
 // L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(smallMap);
@@ -128,12 +132,12 @@ var smallPolyline = L.polyline(coords, {
     opacity: 0.7
 }).addTo(smallMap);
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent(e.latlng.toString())
-        .openOn(map);
-}
+// function onMapClick(e) {
+//     popup
+//         .setLatLng(e.latlng)
+//         .setContent(e.latlng.toString())
+//         .openOn(map);
+// }
 
 function onMouseUp(e) {
     circle
@@ -143,7 +147,7 @@ function onMouseUp(e) {
         
 }
 
-map.on('click', onMapClick);
+// map.on('click', onMapClick);
 map.on('mouseup', onMouseUp);
 
 // document.querySelectorAll(".leaflet-marker-icon")[2].addEventListener("click", hideSmallMap);
@@ -176,4 +180,4 @@ map.on('mouseup', onMouseUp);
 //     L.latLng(50.0324449, -125.2441975),
 //     L.latLng(50.0159652, -125.237579)
 //   ]
-// }).addTo(mymap);
+// }).addTo(map);

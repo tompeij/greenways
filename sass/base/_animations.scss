@@ -1,6 +1,7 @@
 .card {
     perspective: 150rem;
     -moz-perspective: 150rem;
+    -webkit-perspective: 150rem;
     position: relative;
 
     &__side {
@@ -9,6 +10,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
 
         &--back {
