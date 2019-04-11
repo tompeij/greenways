@@ -32,33 +32,33 @@ var mapIcon = L.Icon.extend({
 
 var sideBikeIcon = new mapIcon({
     iconUrl: 'side_bike_marker.png'
-})
+});
 boatIcon = new mapIcon({
     iconUrl: 'boat_marker.png'
-})
+});
 frontBikeIcon = new mapIcon({
     iconUrl: 'front_bike_marker.png'
-})
+});
 
 beaverLodgeIcon = new mapIcon({
     iconUrl: 'images/map-markers/beaver.png'
-})
+});
 
 fiftythMarker = new mapIcon({
     iconUrl: 'images/map-markers/50th-marker.png'
-})
+});
 
 rotaryClub = new mapIcon({
     iconUrl: 'images/map-markers/rotary.png'
-})
+});
 
 nic = new mapIcon({
     iconUrl: 'images/map-markers/nic.png'
-})
+});
 
 estuary = new mapIcon({
     iconUrl: 'images/map-markers/estuary.png'
-})
+});
 
 sequoia = new mapIcon({
     iconUrl: 'images/map-markers/sequoia.png'
@@ -67,7 +67,7 @@ sequoia = new mapIcon({
 ;
 
 
-L.marker([50.000348, -125.258939], {
+L.marker([49.999645, -125.261638], {
     icon: beaverLodgeIcon
 }).addTo(map).bindPopup("<img src=\"images/beaver_lodge_trails.png\"><div class=\"popup-text\"><h2>Beaver Lodge Trails</h2><p>Built near the city of Campbell River, this winding network of trails and pathways is home to many runners, walkers, cyclists and even equestrians. Snow free most of the year, the trails are a great place for winter and night riding or bringing beginner riders to help build their skills. Recent trail work and improvements have been occurring through the park.</p></div>");
 
@@ -100,6 +100,7 @@ L.marker([49.965439, -125.208524], {
 
 
 var popup = L.popup();
+
 var circle = L.circle([50.031646, -125.253174], {
     radius: 1100,
     color: '#45678A',
@@ -122,8 +123,15 @@ var polyline = L.polyline(coords, {
     color: '#28502E',
     smoothFactor: 0.1,
     weight: 8,
-    opacity: 0.7
+    opacity: 0.7,
+    // showMeasurements: true,
+    // measurementOptions: {   
+    //                         showOnHover: true,
+    //                         minDistance: 100 
+    //                     }
 }).addTo(map);
+
+    
 
 var smallPolyline = L.polyline(coords, {
     color: '#28502E',
@@ -132,23 +140,34 @@ var smallPolyline = L.polyline(coords, {
     opacity: 0.7
 }).addTo(smallMap);
 
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent(e.latlng.toString())
-//         .openOn(map);
-// }
+var userCoords = [];
+
+
+
+function onMapClick(e) {
+    // popup
+    //     .setLatLng(e.latlng)
+    //     .setContent(e.latlng.toString())
+    //     .openOn(map);
+    userCoords.push(e.latlng);
+    var userLine = L.polyline(userCoords, {
+        color: '#1F5479',
+        weight: 8,
+        smoothFactor: 0.1,
+        showMeasurements: true,
+    measurementOptions: {minPixelDistance: 1000}}).addTo(map);
+}
+
 
 function onMouseUp(e) {
     circle
-        .setLatLng(e.latlng)
-        .setRadius(1100)
-        .addTo(smallMap);
-        
+        .setLatLng(e.latlng);        
 }
 
-// map.on('click', onMapClick);
+map.on('click', onMapClick);
 map.on('mouseup', onMouseUp);
+
+
 
 // document.querySelectorAll(".leaflet-marker-icon")[2].addEventListener("click", hideSmallMap);
 // document.getElementById("mapid").addEventListener("click",showSmallMap);
@@ -175,9 +194,9 @@ map.on('mouseup', onMouseUp);
 //         .addTo(map);
 // }
 
-//         L.Routing.control({
-//   waypoints: [
-//     L.latLng(50.0324449, -125.2441975),
-//     L.latLng(50.0159652, -125.237579)
-//   ]
-// }).addTo(map);
+        L.Routing.control({
+  waypoints: [
+    L.latLng(50.0324449, -125.2441975),
+    L.latLng(50.0159652, -125.237579)
+  ]
+}).addTo(map);
