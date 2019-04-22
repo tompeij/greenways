@@ -1,281 +1,202 @@
+// Header
+
 .heading-primary {
+  margin-left: 2rem;
+  color: $title-color;
 
-    margin-left: 2rem;
-    color: $title-color;
+  &--main {
+    display: block;
+    font-weight: 300;
+    font-size: calc(2vw + 3rem);
+    line-height: 1;
+  }
 
-    &--main {
-        display: block;
-        font-weight: 300;
-        font-size: calc(2vw + 3rem);
-        line-height: 1;
-
-        // @media only screen and (max-width: 114rem) {
-
-        //     // font-size: 6rem;
-
-        // }
-
-        // @media only screen and (max-width: 90rem) {
-
-        //     // font-size: 5rem;
-
-        // }
-    }
-
-    &--sub {
-        display: block;
-        font-weight: 300;
-        font-size: calc(1vw + 2rem);
-        line-height: 1;
-        padding-top: 1rem;
-
-        // @media only screen and (max-width: 90rem) {
-
-        //     // font-size: 2.8rem;
-
-        // }
-    }
+  &--sub {
+    display: block;
+    font-weight: 300;
+    font-size: calc(1vw + 2rem);
+    line-height: 1;
+    padding-top: 1rem;
+  }
 }
 
 .hero-box {
+  font-weight: 300;
+
+  .heading-secondary {
+    color: $text-color-secondary;
+    font-size: calc(1vw + 2rem);
+    font-weight: 300;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+  }
+
+  &__heading-fact {
+    font-size: 2.1rem;
     font-weight: 300;
 
-    @media only screen and (max-width: 114rem) {
-
-        // line-height: 1.4;
+    @media only screen and (max-width: 90rem) {
+      font-size: 1.6rem;
     }
 
-    .heading-secondary {
-        color: $text-color-secondary;
-        font-size: calc(1vw + 2rem);
-        font-weight: 300;
+    &--stat {
+      color: $text-color-secondary;
+      font-size: 2.1rem;
 
-        // @media only screen and (max-width: 90rem) {
-
-        //     // font-size: 3.4rem;
-
-        // }
+      @media only screen and (max-width: 90rem) {
+        font-size: 1.6rem;
+      }
     }
 
-    &-text {
-        font-size: 1.5rem;
+    &--unit {
+      font-size: 1.4rem;
 
-        // @media only screen and (max-width: 90rem) {
-
-        //     // font-size: 1.3rem;
-
-        // }
+      @media only screen and (max-width: 90rem) {
+        font-size: 1.2rem;
+      }
     }
-
-    &__heading-fact {
-        font-size: 2.1rem;
-        font-weight: 300;
-
-        @media only screen and (max-width: 90rem) {
-
-            font-size: 1.6rem;
-
-        }
-
-        &--stat {
-            color: $text-color-secondary;
-            font-size: 2.1rem;
-
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 1.6rem;
-
-            }
-        }
-
-        &--unit {
-            font-size: 1.4rem;
-
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 1.2rem;
-
-            }
-        }
-    }
+  }
 }
 
+// Stats
+
 .section-stats-heading {
-    color: $text-color-secondary;
-    display: block;
-    font-weight: 300;
-    text-align: center;
-    width: 100%;
+  color: $text-color-secondary;
+  display: block;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
 
-    &__primary {
-        font-size: 6.3rem;
+  &__primary {
+    font-size: calc(2vw + 2rem);
+  }
 
-        @media only screen and (max-width: 90rem) {
-
-            font-size: 5rem;
-
-        }
-    }
-
-    &__secondary {
-        font-size: 2.4rem;
-
-        @media only screen and (max-width: 90rem) {
-
-            font-size: 2rem;
-
-        }
-    }
+  &__secondary {
+    font-size: calc(1vw + 1.2rem);
+  }
 }
 
 .card {
-    text-align: center;
+  text-align: center;
 
-    &-title-text {
-        border: 2px solid $text-color-secondary;
-        border-radius: 10px;
-        color: $text-color-secondary;
-        font-size: 3rem;
-        font-weight: 300;
+  &-title-text {
+    border: 2px solid $text-color-secondary;
+    border-radius: 10px;
+    color: $text-color-secondary;
+    font-size: calc(0.5vw + 1.5rem);
+    font-weight: 400;
+  }
+
+  &__details {
+    & ul {
+      list-style-type: none;
     }
 
-    &__details {
-
-        & ul {
-            list-style-type: none;
-        }
-
-        & li {
-            color: $text-color-quatriary;
-            font-size: 1.6rem;
-            font-weight: 300;
-            text-align: left;
-        }
-
-        &--bold {
-            color: $text-color-tertiary;
-            font-weight: 700;
-        }
+    & li {
+      color: $text-color-quatriary;
+      font-size: 1.6rem;
+      font-weight: 300;
+      text-align: left;
+      @media only screen and (max-width: 114rem) {
+        font-size: 1.3rem;
+      }
+      @media only screen and (max-width: 1210px) {
+        font-size: 1.6rem;
+      }
     }
 
-    @media only screen and (max-width: 114rem) {
-
-        &-title-text {
-            font-size: 2.5rem;
-            font-weight: 300;
-        }
-
-        &__details {
-
-            & li {
-                font-size: 1.3rem;
-            }
-
-        }
-
-
+    &--bold {
+      color: $text-color-tertiary;
+      font-weight: 700;
     }
-
-    ;
+  }
 }
 
-
-
 .about-contact {
-    color: $text-color-quatriary;
+  color: $text-color-quatriary;
 
-    &__heading {
+  &__heading {
+    font-weight: 300;
+    line-height: 1.35;
 
-        font-weight: 300;
-        line-height: 1.35;
+    &--primary {
+      font-size: 5.8rem;
 
-        &--primary {
-            font-size: 5.8rem;
-
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 4.5rem;
-
-            }
-        }
-
-        &--secondary {
-            font-size: 3.2rem;
-
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 3rem;
-
-            }
-        }
+      @media only screen and (max-width: 90rem) {
+        font-size: 4.5rem;
+      }
     }
 
-    &__text-box {
+    &--secondary {
+      font-size: 3.2rem;
 
-        &--heading {
-            font-size: 2.4rem;
-            font-weight: 500;
+      @media only screen and (max-width: 90rem) {
+        font-size: 3rem;
+      }
+    }
+  }
 
-            @media only screen and (max-width: 90rem) {
+  &__text-box {
+    &--heading {
+      font-size: 2.4rem;
+      font-weight: 500;
 
-                font-size: 2rem;
-
-            }
-        }
-
-        &--details {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8rem;
-            font-weight: 300;
-            line-height: 2.5;
-            padding-top: 1rem;
-
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 1.6rem;
-
-            }
-        }
+      @media only screen and (max-width: 90rem) {
+        font-size: 2rem;
+      }
     }
 
-    &__contact-box {
-        &--heading {
-            font-size: 2.4rem;
-            font-weight: 500;
-            margin-bottom: 2.5rem;
+    &--details {
+      font-family: "Merriweather", serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 2.5;
+      padding-top: 1rem;
 
-            @media only screen and (max-width: 90rem) {
-
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-
-            }
-        }
+      @media only screen and (max-width: 90rem) {
+        font-size: 1.6rem;
+      }
     }
+  }
 
-    & .form__input::placeholder {
-        color: #1B2F33;
-        font-size: 1.4rem;
-        font-family: 'lato';
+  &__contact-box {
+    &--heading {
+      font-size: 2.4rem;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+
+      @media only screen and (max-width: 90rem) {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
     }
+  }
+
+  & .form__input::placeholder {
+    color: #1b2f33;
+    font-size: 1.4rem;
+    font-family: "lato";
+  }
 }
 
 footer {
-    & .newsletter {
-        &__input {
-            &::placeholder {
-                color: $text-color-secondary;
-                font-size: 1.4rem;
-                font-family: 'lato';
-                font-weight: 300;
-            }
-        }
-
-        &__button {
-            color: $text-color-secondary;
-            font-size: 1.4rem;
-            font-family: 'lato';
-            font-weight: 300;
-        }
+  & .newsletter {
+    &__input {
+      &::placeholder {
+        color: $text-color-secondary;
+        font-size: 1.4rem;
+        font-family: "lato";
+        font-weight: 300;
+      }
     }
+
+    &__button {
+      color: $text-color-secondary;
+      font-size: 1.4rem;
+      font-family: "lato";
+      font-weight: 300;
+    }
+  }
 }
