@@ -194,9 +194,9 @@ map.on('mouseup', onMouseUp);
 //         .addTo(map);
 // }
 
-        L.Routing.control({
-  waypoints: [
-    L.latLng(50.0324449, -125.2441975),
-    L.latLng(50.0159652, -125.237579)
-  ]
-}).addTo(map);
+//         L.Routing.control({
+//   waypoints: [
+//     L.latLng(50.0324449, -125.2441975),
+//     L.latLng(50.0159652, -125.237579)
+//   ]
+// }).addTo(map);

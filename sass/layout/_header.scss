@@ -2,29 +2,60 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 0 auto;
-    margin-bottom: 2.5rem;
+    margin: 1rem auto 2.5rem;
     max-width: 80vw;
 
-    @media only screen and (max-width: 114rem) { 
+    @media only screen and (max-width: 1120px) { 
 
-        max-width: 90vw;
+        // flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        &__logo {
+            height: 8vh;
+        }
 
+        @media only screen and (max-width: 700px) { 
+            justify-content: center;
+        }
     }
 
     &__text-box {
+
         display: flex;
+        
+        @media only screen and (max-width: 1120px) { 
+
+            flex: 2;
+            min-width: 100%;
+        }
+    }
+}
+
+.header > * {
+    // background-color: blueviolet;
+    
+    flex-basis: 20%;
+    
+    @media only screen and (max-width: 1120px) { 
+
+        flex: 1;
+        max-width: 400px;
     }
 }
 .hero-box {
-    width: 27rem;
-    @media only screen and (max-width: 90rem) { 
+    max-width: 27rem;
+    @media only screen and (max-width: 700px) { 
 
-        width: 22rem;
-
+        display: none;
+        
+        
     }
     &-fact {
         display: flex;
         justify-content: space-between;
     }
+}
+
+.fold {
+    height: 100vh;
 }

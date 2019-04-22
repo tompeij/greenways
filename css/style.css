@@ -64,43 +64,23 @@ body {
   .heading-primary--main {
     display: block;
     font-weight: 300;
-    font-size: 7rem;
-    line-height: 1;
-    width: 34rem; }
-    @media only screen and (max-width: 114rem) {
-      .heading-primary--main {
-        font-size: 6rem; } }
-    @media only screen and (max-width: 90rem) {
-      .heading-primary--main {
-        font-size: 5rem; } }
+    font-size: calc(2vw + 3rem);
+    line-height: 1; }
   .heading-primary--sub {
     display: block;
     font-weight: 300;
-    font-size: 3.6rem;
+    font-size: calc(1vw + 2rem);
     line-height: 1;
-    padding-top: 1rem;
-    width: 34rem; }
-    @media only screen and (max-width: 90rem) {
-      .heading-primary--sub {
-        font-size: 2.8rem; } }
+    padding-top: 1rem; }
 
 .hero-box {
   font-weight: 300; }
-  @media only screen and (max-width: 114rem) {
-    .hero-box {
-      line-height: 1.4; } }
   .hero-box .heading-secondary {
     color: #F69B16;
-    font-size: 4.8rem;
+    font-size: calc(1vw + 2rem);
     font-weight: 300; }
-    @media only screen and (max-width: 90rem) {
-      .hero-box .heading-secondary {
-        font-size: 3.4rem; } }
   .hero-box-text {
     font-size: 1.5rem; }
-    @media only screen and (max-width: 90rem) {
-      .hero-box-text {
-        font-size: 1.3rem; } }
   .hero-box__heading-fact {
     font-size: 2.1rem;
     font-weight: 300; }
@@ -396,29 +376,49 @@ footer .newsletter__button {
       padding-bottom: 2rem; }
 
 .weather-box {
-  width: 35.5rem; }
+  width: 35.5rem;
+  min-width: 32.5rem; }
 
 .header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 2.5rem;
+  margin: 1rem auto 2.5rem;
   max-width: 80vw; }
-  @media only screen and (max-width: 114rem) {
+  @media only screen and (max-width: 1120px) {
     .header {
-      max-width: 90vw; } }
+      flex-wrap: wrap;
+      align-items: center; }
+      .header__logo {
+        height: 8vh; } }
+  @media only screen and (max-width: 1120px) and (max-width: 700px) {
+    .header {
+      justify-content: center; } }
   .header__text-box {
     display: flex; }
+    @media only screen and (max-width: 1120px) {
+      .header__text-box {
+        flex: 2;
+        min-width: 100%; } }
+
+.header > * {
+  flex-basis: 20%; }
+  @media only screen and (max-width: 1120px) {
+    .header > * {
+      flex: 1;
+      max-width: 400px; } }
 
 .hero-box {
-  width: 27rem; }
-  @media only screen and (max-width: 90rem) {
+  max-width: 27rem; }
+  @media only screen and (max-width: 700px) {
     .hero-box {
-      width: 22rem; } }
+      display: none; } }
   .hero-box-fact {
     display: flex;
     justify-content: space-between; }
+
+.fold {
+  height: 100vh; }
 
 .map-box {
   display: flex;
@@ -427,9 +427,6 @@ footer .newsletter__button {
   margin: 0 auto;
   max-width: 80vw;
   position: relative; }
-  @media only screen and (max-width: 114rem) {
-    .map-box {
-      max-width: 90vw; } }
 
 .leaflet-container a.leaflet-popup-close-button {
   width: 40px;
@@ -469,11 +466,8 @@ footer .newsletter__button {
 #mapid {
   position: relative;
   opacity: .9;
-  height: 66vh;
+  height: 70vh;
   width: 100%; }
-  @media only screen and (max-width: 90rem) {
-    #mapid {
-      height: 40vw; } }
 
 #smallMap {
   border: 2px dashed #45678A;

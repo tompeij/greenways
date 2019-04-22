@@ -8,7 +8,7 @@
 
     @media only screen and (max-width: 114rem) {
 
-        max-width: 90vw;
+        // max-width: 90vw;
 
     }
 }
@@ -66,14 +66,9 @@
 #mapid {
     position: relative;
     opacity: .9;
-    height: 66vh;
+    height: 70vh;
     width: 100%;
 
-    @media only screen and (max-width: 90rem) {
-
-        height: 40vw;
-
-    }
 }
 
 #smallMap {
