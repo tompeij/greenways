@@ -520,23 +520,29 @@ footer .newsletter__button {
       align-items: center;
       display: flex;
       margin: 0 auto;
-      max-width: 85vw; }
+      max-width: 80vw; }
   .about-contact__heading {
     padding-left: 1.6rem; }
   .about-contact__row {
     display: flex;
-    justify-content: space-around;
-    max-width: 85vw;
+    justify-content: space-between;
+    max-width: 80vw;
     margin: 0 auto;
-    padding-top: 6.7rem; }
+    padding: 6.7rem 0; }
+    .about-contact__row > * {
+      flex: 1; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__row {
+        flex-direction: column; }
+        .about-contact__row > * {
+          margin-bottom: 20px; } }
   .about-contact__text-box {
-    width: 53.6rem;
-    height: 55rem; }
+    padding-right: 7.5rem; }
     @media only screen and (max-width: 90rem) {
       .about-contact__text-box {
-        height: 43rem; } }
+        padding-right: 0; } }
   .about-contact__form {
-    width: 53.6rem; }
+    max-width: 65rem; }
   .about-contact .form__input {
     background-color: #777B7F;
     border: none;
