@@ -131,6 +131,9 @@ body {
     @media only screen and (max-width: 1210px) {
       .card__details li {
         font-size: 1.6rem; } }
+    @media only screen and (max-width: 575px) {
+      .card__details li {
+        font-size: 1.5rem; } }
   .card__details--bold {
     color: #1F5479;
     font-weight: 700; }
@@ -327,48 +330,6 @@ footer .newsletter__button {
 
 .card-row {
   padding: 6.4rem 0 9.1rem 0; }
-  @media only screen and (max-width: 114rem) {
-    .card-row .card {
-      height: 60rem;
-      width: 40rem; }
-      .card-row .card__side {
-        height: 60rem; }
-      .card-row .card-title-box {
-        height: 14rem;
-        padding: 4rem 7rem; }
-      .card-row .card-img-wrapper {
-        height: 40rem; }
-        .card-row .card-img-wrapper img {
-          width: 70%; }
-      .card-row .card__details {
-        padding: 2.44rem 3.75rem 0; }
-        .card-row .card__details li {
-          padding-bottom: 2rem; } }
-  @media only screen and (max-width: 114rem) and (max-width: 90rem) {
-    .card-row .card {
-      width: 39rem; } }
-  @media only screen and (max-width: 1210px) {
-    .card-row .card {
-      width: 50rem;
-      height: 70rem;
-      margin-top: 30px; }
-      .card-row .card__side {
-        background-color: #E2E3E5;
-        box-shadow: 0 20px 15px rgba(0, 0, 0, 0.16);
-        height: 70rem; }
-      .card-row .card-title-box {
-        background-color: #45678A;
-        height: 14rem;
-        padding: 4rem 7rem; }
-      .card-row .card-img-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 54rem; }
-      .card-row .card__details {
-        padding: 2.44rem 3.75rem 0; }
-        .card-row .card__details li {
-          padding-bottom: 2rem; } }
 
 .card {
   width: 50rem;
@@ -390,6 +351,51 @@ footer .newsletter__button {
     padding: 2.44rem 3.75rem 0; }
     .card__details li {
       padding-bottom: 2rem; }
+  @media only screen and (max-width: 114rem) {
+    .card {
+      height: 60rem;
+      width: 40rem; }
+      .card__side {
+        height: 60rem; }
+      .card-title-box {
+        height: 14rem;
+        padding: 4rem 7rem; }
+      .card-img-wrapper {
+        height: 40rem; }
+        .card-img-wrapper img {
+          width: 70%; }
+      .card__details {
+        padding: 2.44rem 3.75rem 0; }
+        .card__details li {
+          padding-bottom: 2rem; } }
+  @media only screen and (max-width: 114rem) and (max-width: 90rem) {
+    .card {
+      width: 39rem; } }
+  @media only screen and (max-width: 1210px) {
+    .card {
+      width: 50rem;
+      height: 70rem;
+      margin-top: 30px; }
+      .card__side {
+        background-color: #E2E3E5;
+        box-shadow: 0 20px 15px rgba(0, 0, 0, 0.16);
+        height: 70rem; }
+      .card-title-box {
+        background-color: #45678A;
+        height: 14rem;
+        padding: 4rem 7rem; }
+      .card-img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 54rem; }
+      .card__details {
+        padding: 2.44rem 3.75rem 0; }
+        .card__details li {
+          padding-bottom: 2rem; } }
+  @media only screen and (max-width: 575px) {
+    .card {
+      width: 450px; } }
 
 .weather-box {
   width: 35.5rem;
@@ -585,11 +591,24 @@ footer .newsletter__button {
   display: flex;
   font-size: 1.4rem;
   font-weight: 300;
-  height: 20rem;
   justify-content: space-around;
-  margin-top: 5rem; }
+  margin-top: 5rem;
+  padding: 3rem 0; }
+  @media only screen and (max-width: 500px) {
+    .footer {
+      flex-direction: column; }
+      .footer > * {
+        flex: 1; } }
   .footer ul {
     list-style-type: none; }
+    @media only screen and (max-width: 500px) {
+      .footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .footer ul > * {
+          flex: 1;
+          padding: 10px; } }
   .footer .fa-icons {
     text-align: center; }
   .footer a {
@@ -599,6 +618,15 @@ footer .newsletter__button {
       margin-right: 1rem; }
   .footer .social-media {
     display: flex; }
+    @media only screen and (max-width: 800px) {
+      .footer .social-media__links {
+        display: none; } }
+  @media only screen and (max-width: 800px) {
+    .footer .newsletter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px; } }
   .footer .newsletter__text {
     padding-left: .5rem; }
   .footer .newsletter__input {
