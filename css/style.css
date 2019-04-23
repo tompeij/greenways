@@ -144,15 +144,9 @@ body {
     font-weight: 300;
     line-height: 1.35; }
     .about-contact__heading--primary {
-      font-size: 5.8rem; }
-      @media only screen and (max-width: 90rem) {
-        .about-contact__heading--primary {
-          font-size: 4.5rem; } }
+      font-size: calc(1vw + 3rem); }
     .about-contact__heading--secondary {
-      font-size: 3.2rem; }
-      @media only screen and (max-width: 90rem) {
-        .about-contact__heading--secondary {
-          font-size: 3rem; } }
+      font-size: calc(0.5vw + 2rem); }
   .about-contact__text-box--heading {
     font-size: 2.4rem;
     font-weight: 500; }
@@ -426,6 +420,7 @@ footer .newsletter__button {
         min-width: 100%; } }
 
 .header > * {
+  margin-bottom: 10px;
   flex-basis: 20%; }
   @media only screen and (max-width: 1120px) {
     .header > * {
@@ -527,8 +522,14 @@ footer .newsletter__button {
       display: flex;
       margin: 0 auto;
       max-width: 80vw; }
+      @media only screen and (max-width: 700px) {
+        .about-contact-heading-box__heading {
+          flex-wrap: wrap; } }
   .about-contact__heading {
     padding-left: 1.6rem; }
+  @media only screen and (max-width: 700px) {
+    .about-contact__logo img {
+      display: none; } }
   .about-contact__row {
     display: flex;
     justify-content: space-between;

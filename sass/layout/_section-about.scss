@@ -12,11 +12,22 @@
             display: flex;
             margin: 0 auto;
             max-width: 80vw;
+            @media only screen and (max-width: 700px) {
+                flex-wrap: wrap;
+            }
         }
     }
 
     &__heading {
         padding-left: 1.6rem;
+
+    }
+
+    &__logo img {
+
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
     }
 
     &__row {

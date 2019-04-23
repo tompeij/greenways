@@ -126,19 +126,12 @@
     line-height: 1.35;
 
     &--primary {
-      font-size: 5.8rem;
+      font-size: calc(1vw + 3rem);
 
-      @media only screen and (max-width: 90rem) {
-        font-size: 4.5rem;
-      }
     }
 
     &--secondary {
-      font-size: 3.2rem;
-
-      @media only screen and (max-width: 90rem) {
-        font-size: 3rem;
-      }
+      font-size: calc(0.5vw + 2rem);
     }
   }
 
