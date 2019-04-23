@@ -39,29 +39,12 @@
       height: 60rem;
     }
 
-    &-title-box {
-      height: 14rem;
-      padding: 4rem 7rem;
-    }
-
     &-img-wrapper {
       height: 40rem;
 
       img {
         width: 80%;
       }
-    }
-
-    &__details {
-      padding: 2.44rem 3.75rem 0;
-
-      & li {
-        padding-bottom: 2rem;
-      }
-    }
-
-    @media only screen and (max-width: 90rem) {
-      width: 39rem;
     }
   }
 

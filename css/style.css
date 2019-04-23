@@ -352,20 +352,10 @@ footer .newsletter__button {
       width: 40rem; }
       .card__side {
         height: 60rem; }
-      .card-title-box {
-        height: 14rem;
-        padding: 4rem 7rem; }
       .card-img-wrapper {
         height: 40rem; }
         .card-img-wrapper img {
-          width: 80%; }
-      .card__details {
-        padding: 2.44rem 3.75rem 0; }
-        .card__details li {
-          padding-bottom: 2rem; } }
-  @media only screen and (max-width: 114rem) and (max-width: 90rem) {
-    .card {
-      width: 39rem; } }
+          width: 80%; } }
   @media only screen and (max-width: 1210px) {
     .card {
       width: 50rem;
