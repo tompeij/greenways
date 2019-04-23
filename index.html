@@ -21,125 +21,74 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
         crossorigin="" />
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
         integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
         crossorigin=""></script>
 
-        <!-- Leaflet path measurment API -->
-        <script src="javascript/leaflet-measure-path.js"></script>
-        <link rel="stylesheet" href="css/leaflet-measure-path.css">
+    <!-- Leaflet path measurment API -->
+    <script src="javascript/leaflet-measure-path.js"></script>
+    <link rel="stylesheet" href="css/leaflet-measure-path.css">
     <title>Greenways Loop</title>
 </head>
 
 <body>
     <div class="container">
         <div class="fold">
-        <header class="header">
-            <!-- <div class="header__logo-box">
-                <img src="images/greenways_logo.svg" alt="Greenways Frog Logo" class="header__logo">
-            </div> -->
-            <div class="header__text-box">
-                <img src="images/greenways_logo.svg" alt="Greenways Frog Logo" class="header__logo">
-                <h1 class="heading-primary">
-                    <span class="heading-primary--main">Greenways Loop</span>
-                    <span class="heading-primary--sub">Campbell River</span>
-                </h1>
-            </div>
-            <div class="weather-box">
-                <a class="weatherwidget-io" href="https://forecast7.com/en/50d03n125d27/campbell-river/"
-                    data-font="Helvetica" data-mode="Forecast" data-days="5" data-textcolor="#AEAFB1"
-                    data-highcolor="#F69B16" data-lowcolor="#90A0B7" data-suncolor="#F69B16" data-cloudcolor="#90A0B7"
-                    data-raincolor="#90A0B7">Campbell River, BC, Canada</a>
-                <script>
-                    ! function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = 'https://weatherwidget.io/js/widget.min.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'weatherwidget-io-js');
-                </script>
-            </div>
-            <div class="hero-box">
-                <h2 class="heading-secondary">Be a hero</h2>
-                <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
-                <div class="hero-box-fact">
-                    <div class="hero-box-fact__details">
-                        <h4 class="hero-box__heading-fact">burn</h4>
-                        <p class="hero-box__heading-fact--stat">24k</p>
-                        <p class="hero-box__heading-fact--unit">calories</p>
-                    </div>
-                    <div class="hero-box-fact__details">
-                        <h4 class="hero-box__heading-fact">extend</h4>
-                        <p class="hero-box__heading-fact--stat">60hrs</p>
-                        <p class="hero-box__heading-fact--unit">of your life</p>
-                    </div>
-                    <div class="hero-box-fact__details">
-                        <h4 class="hero-box__heading-fact">reduce</h4>
-                        <p class="hero-box__heading-fact--stat">160kg</p>
-                        <p class="hero-box__heading-fact--unit">carbon</p>
+            <header class="header">
+                <div class="header__text-box">
+                    <img src="images/greenways_logo.svg" alt="Greenways Frog Logo" class="header__logo">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--main">Greenways Loop</span>
+                        <span class="heading-primary--sub">Campbell River</span>
+                    </h1>
+                </div>
+                <div class="weather-box">
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/50d03n125d27/campbell-river/"
+                        data-font="Helvetica" data-mode="Forecast" data-days="5" data-textcolor="#AEAFB1"
+                        data-highcolor="#F69B16" data-lowcolor="#90A0B7" data-suncolor="#F69B16"
+                        data-cloudcolor="#90A0B7" data-raincolor="#90A0B7">Campbell River, BC, Canada</a>
+                </div>
+                <div class="hero-box">
+                    <h2 class="heading-secondary">Be a hero</h2>
+                    <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
+                    <div class="hero-box-fact">
+                        <div class="hero-box-fact__details">
+                            <h4 class="hero-box__heading-fact">burn</h4>
+                            <p class="hero-box__heading-fact--stat">24k</p>
+                            <p class="hero-box__heading-fact--unit">calories</p>
+                        </div>
+                        <div class="hero-box-fact__details">
+                            <h4 class="hero-box__heading-fact">extend</h4>
+                            <p class="hero-box__heading-fact--stat">60hrs</p>
+                            <p class="hero-box__heading-fact--unit">of your life</p>
+                        </div>
+                        <div class="hero-box-fact__details">
+                            <h4 class="hero-box__heading-fact">reduce</h4>
+                            <p class="hero-box__heading-fact--stat">160kg</p>
+                            <p class="hero-box__heading-fact--unit">carbon</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <section class="map-box">
-            <div class="overlay">
-                <div id="mapid"> <div id="smallMap"></div></div>
+            </header>
+            <section class="map-box">
+                <div class="overlay">
+                    <div id="mapid">
+                        <div id="smallMap"></div>
+                    </div>
 
-            </div>
-            <!-- <button class="btn-share">Share</button> -->
-            <div class="btn_wrap">
-                <span>Share</span>
-                <div class="btn-container">
-                    <a href="#" class="twitter-share"><i class="fab fa-twitter"></i></a>
-                    <script>
-                        var getWindowOptions = function () {
-                            var width = 500;
-                            var height = 350;
-                            var left = (window.innerWidth / 2) - (width / 2);
-                            var top = (window.innerHeight / 2) - (height / 2);
-
-                            return [
-                                'resizable,scrollbars,status',
-                                'height=' + height,
-                                'width=' + width,
-                                'left=' + left,
-                                'top=' + top,
-                            ].join();
-                        };
-                        var twitterBtn = document.querySelector('.twitter-share');
-                        var text = encodeURIComponent('Hey everyone, come check out the Loop! It\'\s amazing!');
-                        var shareUrl = 'https://twitter.com/intent/tweet?url=' + location.href + '&text=' + text;
-                        twitterBtn.href = shareUrl; // 1
-
-                        twitterBtn.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            var win = window.open(shareUrl, 'ShareOnTwitter', getWindowOptions());
-                            win.opener = null; // 2
-                        });
-                    </script>
-                    <a href="#" class="facebook-share"><i class="fab fa-facebook-f"></i></a>
-                    <script>
-                        var fbButton = document.querySelector('.facebook-share');
-                        var url = window.location.href;
-
-                        fbButton.addEventListener('click', function () {
-                            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
-                                'facebook-share-dialog',
-                                getWindowOptions()
-                                // 'width=800,height=600,left=250,top=250'
-                            );
-                            return false;
-                        });
-                    </script>
-                    <i class="fab fa-instagram"></i>
                 </div>
-            </div>
-        </section>
-    </div>
+                <div class="btn_wrap">
+                    <span>Share</span>
+                    <div class="btn-container">
+                        <a href="#" class="twitter-share"><i class="fab fa-twitter"></i></a>
+
+                        <a href="#" class="facebook-share"><i class="fab fa-facebook-f"></i></a>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
         <section class="section-stats">
             <div class="section-stats-text-box">
                 <h2 class="section-stats-heading">
@@ -353,13 +302,11 @@
                     <li>250-287-3785</li>
                 </ul>
             </div>
-            <!-- <div class="copyright">
-                    <p class="copyright__text">&#169; 2019 Greenways Land Trust</p>
-                </div> -->
         </footer>
     </div>
     <script src="javascript/route.js"></script>
     <script src="javascript/greenways.js"></script>
+    <script src='javascript/Share_And_Weather.js'></script>
 
 </body>
 
