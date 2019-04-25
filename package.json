@@ -7,11 +7,13 @@
     "leaflet": "^1.4.0"
   },
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "leaflet-measure-path": "^1.4.2",
     "node-sass": "^4.11.0"
   },
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "autoprefix": "autoprefixer css/style.css"
   },
   "repository": {
     "type": "git",
