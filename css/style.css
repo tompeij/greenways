@@ -81,6 +81,22 @@ body {
     font-weight: 300; }
   .hero-box-text {
     font-size: 1.5rem; }
+    .hero-box-text #commute {
+      background-color: rgba(174, 175, 177, 0.5);
+      border: 1px solid #EEE;
+      border-radius: 3px;
+      color: #AEAFB1;
+      width: 4rem;
+      height: 2.5rem;
+      font-family: "Lato";
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin: 0 2px;
+      padding-bottom: 1px;
+      text-align: center; }
+      .hero-box-text #commute:focus {
+        outline: none;
+        border: 2px solid rgba(246, 155, 22, 0.6); }
   .hero-box__heading-fact {
     font-size: 2.1rem;
     font-weight: 300; }
@@ -342,6 +358,8 @@ footer .newsletter__button {
     justify-content: center;
     align-items: center;
     height: 54rem; }
+    .card-img-wrapper .piggy {
+      margin-left: -50px; }
   .card__details {
     padding: 2.44rem 3.75rem 0; }
     .card__details li {

@@ -1,3 +1,16 @@
+// Hero Calc
+
+function heroCalc() {
+  let distance = document.querySelector("#commute").value;
+  let burn = document.querySelector("#burn");
+  let extend = document.querySelector("#extend");
+  let reduce = document.querySelector("#reduce");
+
+  burn.innerHTML = Math.ceil((distance * 1600) / 1000) + "k";
+  extend.innerHTML = Math.ceil((distance * 4)) + "hrs";
+  reduce.innerHTML = Math.ceil((distance * 1060) / 100) + "kg"
+}
+
 // Share Button
 
 var getWindowOptions = function() {

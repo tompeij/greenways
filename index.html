@@ -51,21 +51,27 @@
                 </div>
                 <div class="hero-box">
                     <h2 class="heading-secondary">Be a hero</h2>
-                    <p class="hero-box-text">In one month of riding your bike 15km to work you will…</p>
+                    <p class="hero-box-text">In one month of riding your bike       <input type="text" id="commute" oninput="heroCalc()" value="15" autofocus> km to work you will…</p>
+
+                    <script>
+                    
+
+                    </script>
+
                     <div class="hero-box-fact">
                         <div class="hero-box-fact__details">
                             <h4 class="hero-box__heading-fact">burn</h4>
-                            <p class="hero-box__heading-fact--stat">24k</p>
+                            <p class="hero-box__heading-fact--stat" id="burn">24k</p>
                             <p class="hero-box__heading-fact--unit">calories</p>
                         </div>
                         <div class="hero-box-fact__details">
                             <h4 class="hero-box__heading-fact">extend</h4>
-                            <p class="hero-box__heading-fact--stat">60hrs</p>
+                            <p class="hero-box__heading-fact--stat" id="extend">60hrs</p>
                             <p class="hero-box__heading-fact--unit">of your life</p>
                         </div>
                         <div class="hero-box-fact__details">
                             <h4 class="hero-box__heading-fact">reduce</h4>
-                            <p class="hero-box__heading-fact--stat">160kg</p>
+                            <p class="hero-box__heading-fact--stat" id="reduce">159kg</p>
                             <p class="hero-box__heading-fact--unit">carbon</p>
                         </div>
                     </div>
@@ -148,7 +154,7 @@
                             <h3 class="card-title-text">Health &amp Wellness</h3>
                         </div>
                         <div class="card-img-wrapper">
-                            <img src="images/heart.svg" alt="Picture of Globe">
+                            <img src="images/heart.svg" alt="Picture of Heart with First Aid Cross">
                         </div>
                     </div>
                     <div class="card__side card__side--back">
@@ -189,7 +195,7 @@
                             <h3 class="card-title-text">Economics</h3>
                         </div>
                         <div class="card-img-wrapper">
-                            <img src="images/piggy.svg" alt="Picture of Globe">
+                            <img src="images/piggy.svg" alt="Picture of Piggy Bank" class="piggy">
                         </div>
                     </div>
                     <div class="card__side card__side--back">

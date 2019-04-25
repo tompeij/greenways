@@ -31,6 +31,24 @@
 
   &-text {
     font-size: 1.5rem;
+    & #commute {
+        background-color: rgba(174, 175, 177, 0.5);
+        border: 1px solid #EEE;
+        border-radius: 3px;
+        color: $text-color-primary;
+        width: 4rem;
+        height: 2.5rem;
+        font-family: "Lato";
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin: 0 2px;
+        padding-bottom: 1px;
+        text-align: center;
+        &:focus {
+            outline: none;
+            border: 2px solid rgba(246, 155, 22, .6);
+    } 
+    }
   }
 
   &__heading-fact {
@@ -118,7 +136,7 @@
     }
   }
 }
-
+// About
 .about-contact {
   color: $text-color-quatriary;
 
@@ -159,6 +177,7 @@
     }
   }
 
+// Contact
   &__contact-box {
     &--heading {
       font-size: 2.4rem;
