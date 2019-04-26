@@ -403,7 +403,7 @@ footer .newsletter__button {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin: 1rem auto 2.5rem;
+  margin: 0 auto 2.5rem;
   max-width: 80vw; }
   @media only screen and (max-width: 1120px) {
     .header {
@@ -488,7 +488,7 @@ footer .newsletter__button {
 #mapid {
   position: relative;
   opacity: .9;
-  height: 70vh;
+  height: 68vh;
   width: 100%;
   cursor: pointer; }
   #mapid:active:hover {
