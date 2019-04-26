@@ -1,30 +1,22 @@
-// var map = L.map('mapid').setView([50.025, -125.257076], 15);
-
-var map = L.map("mapid", {
-  //   center: [50.017513, -125.243145],
-  center: [50.022965, -125.2406],
-  zoom: 14,
+const map = L.map("mapid", {
+  center: [50.02402047091398, -125.25168668478729],
+  zoom: 15,
   scrollWheelZoom: false
 });
 
-var smallMap = L.map("smallMap", {
+const smallMap = L.map("smallMap", {
   center: [49.9929, -125.235807],
   zoom: 12,
   scrollWheelZoom: false,
-  zoomControl: false
+  zoomControl: false,
+  dragging: false
 });
 
-map.setMaxBounds([[50.052773, -125.283526], [49.942276, -125.19]]);
+map.setMaxBounds([[50.079226, -125.340151], [49.92992, -125.124659]]);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(map);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19
-}).addTo(smallMap);
+L.tileLayer.provider("OpenStreetMap.Mapnik").addTo(smallMap);
 
 var mapIcon = L.Icon.extend({
   options: {
@@ -126,10 +118,26 @@ var circle = L.circle([50.031646, -125.253174], {
   fillColor: "#45678A"
 }).addTo(smallMap);
 
-// var bounds = [[50.036793, -125.269843], [50.020785, -125.231478]];
-// L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(smallMap);
+function updateCircle(e) {
+  circle.setLatLng(e.latlng);
+}
 
-// L.circle([50.024121, -125.250749], {radius: 1100}).addTo(smallMap);
+map.on("mouseup", updateCircle);
+map.on("zoom", function() {
+  circle.setLatLng(map.getCenter());
+});
+
+circle.on({
+  mousedown: function() {
+    smallMap.on("mousemove", function(e) {
+      circle.setLatLng(e.latlng);
+      map.panTo(e.latlng);
+    });
+  }
+});
+smallMap.on("mouseup", function(e) {
+  smallMap.removeEventListener("mousemove");
+});
 
 var polyline = L.polyline(coords, {
   color: "#28502E",
@@ -151,52 +159,26 @@ var smallPolyline = L.polyline(coords, {
 }).addTo(smallMap);
 
 var userCoords = [];
+var userLine;
 
 function onMapClick(e) {
-  popup
-    .setLatLng(e.latlng)
-    .setContent(e.latlng.toString())
-    .openOn(map);
+  // Use popup for debug
+  //   popup
+  //     .setLatLng(e.latlng)
+  //     .setContent(e.latlng.toString())
+  //     .openOn(map);
   userCoords.push(e.latlng);
-  var userLine = L.polyline(userCoords, {
+  userLine = L.polyline(userCoords, {
     color: "#1F5479",
     weight: 8,
     smoothFactor: 0.1,
     showMeasurements: true,
     measurementOptions: { minPixelDistance: 1000 }
   }).addTo(map);
-}
-
-function onMouseUp(e) {
-  circle.setLatLng(e.latlng);
+  return userLine;
 }
 
 map.on("click", onMapClick);
-map.on("mouseup", onMouseUp);
-
-// document.querySelectorAll(".leaflet-marker-icon")[2].addEventListener("click", hideSmallMap);
-// document.getElementById("mapid").addEventListener("click",showSmallMap);
-
-// function hideSmallMap() {
-//     document.getElementById("smallMap").style.zIndex = "400";
-// }
-
-// function showSmallMap() {
-//     document.getElementById("smallMap").style.zIndex = "401";
-// }
-
-// var planes = [
-//     ["Discovery Marina", 50.0324449, -125.2441975],
-//     ["Sequoia Park", 50.0159652, -125.237579],
-//     ["Beaver Lodge Park", 49.9859959, -125.2619886]
-
-// ];
-
-// for (var i = 0; i < planes.length; i++) {
-//     marker = new L.marker([planes[i][1], planes[i][2]])
-//         .bindPopup(planes[i][0])
-//         .addTo(map);
-// }
 
 //         L.Routing.control({
 //   waypoints: [

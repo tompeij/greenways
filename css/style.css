@@ -447,15 +447,12 @@ footer .newsletter__button {
   margin: 0 auto;
   max-width: 80vw;
   position: relative; }
-  @media only screen and (max-width: 700px) {
-    .map-box {
-      max-width: 90vw; } }
 
 .leaflet-container a.leaflet-popup-close-button {
   width: 40px;
   height: 40px;
   font: 36px/34px Tahoma, Verdana, sans-serif;
-  color: #777B7F; }
+  color: white; }
 
 .leaflet-popup-content {
   border-radius: 0;
@@ -463,7 +460,7 @@ footer .newsletter__button {
   font-weight: 300;
   padding: 0;
   margin: 0;
-  width: 43rem !important; }
+  width: 42rem !important; }
   .leaflet-popup-content-wrapper {
     border-radius: 0;
     border: none;
@@ -471,6 +468,8 @@ footer .newsletter__button {
   .leaflet-popup-content img {
     width: 100%;
     height: 25rem; }
+  .leaflet-popup-content iframe {
+    width: 100%; }
   .leaflet-popup-content .popup-text {
     padding: 2rem 6rem; }
   .leaflet-popup-content h2 {
@@ -490,7 +489,10 @@ footer .newsletter__button {
   position: relative;
   opacity: .9;
   height: 70vh;
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
+  #mapid:active:hover {
+    cursor: grab; }
 
 #smallMap {
   border: 2px dashed #45678A;
@@ -500,10 +502,15 @@ footer .newsletter__button {
   width: 25rem;
   right: 3rem;
   top: 3rem;
-  z-index: 401; }
+  z-index: 401;
+  cursor: pointer; }
+  #smallMap:active:hover {
+    cursor: grab; }
   @media only screen and (max-width: 1120px) {
     #smallMap {
       display: none; } }
+  #smallMap .leaflet-interactive:active:hover {
+    cursor: grab; }
 
 .overlay {
   position: relative;

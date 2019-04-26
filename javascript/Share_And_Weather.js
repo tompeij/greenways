@@ -6,9 +6,9 @@ function heroCalc() {
   let extend = document.querySelector("#extend");
   let reduce = document.querySelector("#reduce");
 
-  burn.innerHTML = Math.ceil((distance * 1600) / 1000) + "k";
-  extend.innerHTML = Math.ceil((distance * 4)) + "hrs";
-  reduce.innerHTML = Math.ceil((distance * 1060) / 100) + "kg"
+  burn.textContent = Math.ceil((distance * 1600) / 1000) + "k";
+  extend.textContent = Math.ceil((distance * 4)) + "hrs";
+  reduce.textContent = Math.ceil((distance * 1060) / 100) + "kg"
 }
 
 // Share Button
