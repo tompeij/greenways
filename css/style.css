@@ -543,7 +543,7 @@ footer .newsletter__button {
       display: none; } }
   .about-contact__row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     max-width: 80vw;
     margin: 0 auto;
     padding: 6.7rem 0; }
@@ -555,12 +555,20 @@ footer .newsletter__button {
         .about-contact__row > * {
           margin-bottom: 20px; } }
   .about-contact__text-box {
-    padding-right: 7.5rem; }
+    max-width: 100%; }
     @media only screen and (max-width: 90rem) {
-      .about-contact__text-box {
-        padding-right: 0; } }
+      .about-contact__text-box--details {
+        line-height: 1.9; } }
+  .about-contact__contact-box {
+    padding-left: 12rem; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__contact-box {
+        padding-left: 0; } }
   .about-contact__form {
-    max-width: 65rem; }
+    max-width: 80%; }
+    @media only screen and (max-width: 90rem) {
+      .about-contact__form {
+        max-width: 100%; } }
   .about-contact .form__input {
     background-color: #777B7F;
     border: none;

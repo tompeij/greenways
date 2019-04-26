@@ -32,7 +32,7 @@
 
     &__row {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         max-width: 80vw;
         margin: 0 auto;
         padding: 6.7rem 0;
@@ -53,19 +53,40 @@
     }
 
     &__text-box {
+        max-width: 100%;
 
-        padding-right: 7.5rem;
+        &--details {
+            
+            @media only screen and (max-width: 90rem) {
 
-        @media only screen and (max-width: 90rem) {
-
-            padding-right: 0;
-
+                line-height: 1.9;
+    
+            }
         }
         
     }
 
+    &__contact-box {
+        padding-left: 12rem;
+
+        @media only screen and (max-width: 90rem) {
+
+            padding-left: 0;
+
+        }
+    }
+
     &__form {
-        max-width: 65rem;
+        max-width: 80%;
+
+        @media only screen and (max-width: 90rem) {
+
+            max-width: 100%;
+
+        }
+
+        
+        
     }
     & .form__input {
         background-color: $color-grey-dark;
